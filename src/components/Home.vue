@@ -73,7 +73,7 @@
         <div>Rank<Icon_triangle class="triangle" /></div>
         <div>Distance<Icon_triangle class="triangle" /></div>
       </div>
-      <div class="list_container">
+      <div class="list_container1">
         <div class="listItem" v-for="(call, index) in callList">
           <Home_list
             @delete="Delete"
@@ -110,6 +110,94 @@ export default {
   data() {
     return {
       callList: [
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
+        {
+          id: Math.random(),
+          time: "10:23",
+          code: 1,
+          name: "James Washington",
+          rank: "Capitan 3",
+          distance: "23.11 km",
+        },
         {
           id: Math.random(),
           time: "10:23",
@@ -230,7 +318,7 @@ h1 {
   margin-bottom: 42px;
 }
 
-.list_container {
+.list_container1 {
   width: 1360px;
   overflow: auto;
   display: flex;
@@ -305,7 +393,7 @@ h1 {
     width: 938px;
     grid-template-columns: 140px 105px 276px 220px 153px 130px 46px 46px;
   }
-  .list_container {
+  .list_container1 {
     justify-content: flex-start;
     width: 1120px;
     max-height: 520px;
@@ -336,6 +424,31 @@ h1 {
     height: 80px;
     text-align: center;
     margin-left: 0px;
+  }
+}
+@media screen and (min-width: 2048px) {
+  .list_container1 {
+    width: 1500px;
+    max-height: 500px;
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 2879px) {
+  .list_container1 {
+    width: 2200px;
+    max-height: 1500px;
+    justify-content: flex-start;
+  }
+  .listItem {
+    grid-template-columns: 240px 205px 376px 839px 253px 130px 46px 46px;
+    font-size: 30px;
+  }
+  .list {
+    grid-template-columns: 240px 205px 376px 839px 253px;
+    font-size: 30px;
+  }
+  h1 {
+    font-size: 40px;
   }
 }
 </style>

@@ -14,6 +14,11 @@
 
     <span :style="'color: ' + color[2]">Stuff</span>
   </div>
+  <div @click="SwitchTab(9)" class="nav_element">
+    <Icon_car :color="color" />
+
+    <span :style="'color: ' + color[5]">Flotte</span>
+  </div>
   <div @click="SwitchTab(4)" class="nav_element">
     <Icon_list :color="color" />
 
@@ -23,7 +28,7 @@
     <Icon_agents :color="color" />
     <span :style="'color: ' + color[4]">Agents</span>
   </div>
-  <div style="margin-top: 526px" class="nav_element">
+  <div style="margin-top: 454px" class="nav_element">
     <Icon_logout :color="color" />
     <span>Logout</span>
   </div>
@@ -36,6 +41,7 @@ import Icon_stuff from "@/icons/Icon_stuff.vue";
 import Icon_list from "@/icons/Icon_list.vue";
 import Icon_agents from "@/icons/Icon_agents.vue";
 import Icon_logout from "../icons/Icon_logout.vue";
+import Icon_car from "@/icons/Icon_car.vue";
 export default {
   components: {
     Icone_home,
@@ -44,6 +50,7 @@ export default {
     Icon_list,
     Icon_agents,
     Icon_logout,
+    Icon_car,
   },
   props: {
     currentPageID: {
@@ -58,8 +65,9 @@ export default {
         stuff: 3,
         list: 4,
         agents: 5,
+        cars: 9,
       },
-      color: ["#396aff", "#b4bdcd", "#b4bdcd", "#b4bdcd", "#b4bdcd"], // [Home, Files, Stuff, List, Agents]
+      color: ["#396aff", "#b4bdcd", "#b4bdcd", "#b4bdcd", "#b4bdcd", "#b4bdcd"], // [Home, Files, Stuff, cars,List, Agents]
     };
   },
   methods: {

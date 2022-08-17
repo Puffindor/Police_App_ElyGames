@@ -28,6 +28,7 @@
     <Modal
       :PopupProfile="this.CriminalList[this.index]"
       @close="Show"
+      @upload="Upload"
       v-if="showModal"
     />
   </div>
@@ -62,6 +63,9 @@ export default {
     };
   },
   methods: {
+    Upload(link, id) {
+      this.$emit("upload", link, id);
+    },
     Show(id) {
       this.showModal = !this.showModal;
       this.index = this.CriminalList.findIndex((el) => el.id === id);

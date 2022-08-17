@@ -1,5 +1,5 @@
 <template>
-  <h1 @click="Search">Online Agents</h1>
+  <h1>Online Agents</h1>
   <div class="search_inp">
     <input
       placeholder="Search"
@@ -23,7 +23,9 @@
         :status="agent.status"
         :distance="agent.distance"
         :id="agent.id"
+        :invited="agent.invited"
         @AgentID="agent_profile"
+        @invited="Invited"
       />
     </div>
   </div>
@@ -59,7 +61,9 @@ export default {
       } else {
         this.List = this.AgentsList;
       }
-      console.log(this.List);
+    },
+    Invited(id) {
+      this.$emit("invited", id);
     },
   },
 };

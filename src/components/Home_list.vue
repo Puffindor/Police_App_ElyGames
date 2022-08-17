@@ -75,4 +75,6 @@ export default {
   color: white;
   font-size: 16px;
 }
+@media screen and (max-width: 2881px) {
+}
 </style>

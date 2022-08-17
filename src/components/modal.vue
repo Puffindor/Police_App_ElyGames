@@ -5,10 +5,15 @@
       <h1>Edit Criminal Files</h1>
       <div class="popup_inner2">
         <div class="left_column">
-          <div class="img"></div>
+          <!-- <div class="img"></div> -->
+          <img class="img" :src="img" />
           <div class="link_1">
-            <div class="link_2"><Icon_upload /></div>
-            Link
+            <div @click="Upload" class="link_2"><Icon_upload /></div>
+            <input
+              placeholder="Link"
+              @input="this.Link = $event.target.value"
+              v-bind:value="this.Link"
+            />
           </div>
           <span class="link_3"
             >* Insert a link to a picture of the criminal</span
@@ -111,12 +116,22 @@ import Icon_red_cross from "@/icons/Icon_red_cross.vue";
 import Icon_lock from "@/icons/Icon_lock.vue";
 import Icon_upload from "@/icons/Icon_upload.vue";
 export default {
+  data() {
+    return {
+      avatar: "",
+      Link: "",
+    };
+  },
   components: { Icon_red_cross, Icon_lock, Icon_upload },
   props: ["PopupProfile"],
   ethnicity: "",
   addres: "",
   otherInfo: "",
   methods: {
+    Upload() {
+      this.$emit("upload", this.Link, this.PopupProfile.id);
+      this.Link = "";
+    },
     show() {
       this.$emit("close");
     },
@@ -130,6 +145,15 @@ export default {
       }
       if (this.otherInfo) {
         this.PopupProfile.otherInfo = this.otherInfo;
+      }
+    },
+  },
+  computed: {
+    img() {
+      if (this.PopupProfile.avatar) {
+        return (this.avatar = this.PopupProfile.avatar);
+      } else {
+        return (this.avatar = require("@/icons/base_avatar.png"));
       }
     },
   },

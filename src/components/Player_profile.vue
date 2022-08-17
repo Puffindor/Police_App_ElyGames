@@ -1,5 +1,4 @@
 <template>
-  <span>{{ Invited() }}</span>
   <h1 class="head">Police Profile</h1>
   <span>{{ Color() }}</span>
   <div class="profile">
@@ -10,7 +9,7 @@
         <span>Status</span>
       </div>
       <div class="list_container1">
-        <div v-for="crime in this.agent_profile.history" class="list_item1">
+        <div v-for="crime in this.PlayerProfile.history" class="list_item1">
           <Agent_profile_list :name="crime.name" :status="crime.status" />
         </div>
       </div>
@@ -19,39 +18,44 @@
     <div class="medals"></div>
     <div class="left_column">
       <div class="img_container">
-        <!-- <div class="img"></div> -->
         <img class="img" :src="img" />
-        <!-- <img class="img" src="@/icons/base_avatar.png" /> -->
-        <!-- <img src="@/icons/avatar.png" /> -->
-        <button @click="Invite1" class="btn2">{{ this.invite }}</button>
+
+        <button @click="Show" class="btn2">Edit profile</button>
       </div>
       <div class="name_container">
-        <span class="name">{{ this.agent_profile.name }}</span>
+        <span class="name">{{ this.PlayerProfile.name }}</span>
         <span class="status_container">
-          {{ this.agent_profile.status }}
+          {{ this.PlayerProfile.status }}
         </span>
-        <span class="rank">{{ this.agent_profile.rank }}</span>
+        <span class="rank">{{ this.PlayerProfile.rank }}</span>
       </div>
       <div class="info_container">
         <span class="b"
           ><span class="h">Birthday: </span
-          >{{ this.agent_profile.birthday }}</span
+          >{{ this.PlayerProfile.birthday }}</span
         >
         <span class="b"
-          ><span class="h">Id: </span>{{ this.agent_profile.id }}</span
+          ><span class="h">Id: </span>{{ this.PlayerProfile.id }}</span
         >
         <span class="b"
-          ><span class="h">Phone: </span>{{ this.agent_profile.phone }}</span
+          ><span class="h">Phone: </span>{{ this.PlayerProfile.phone }}</span
         >
       </div>
     </div>
   </div>
+  <Player_profile_modal
+    v-if="ShowModal"
+    :PlayerProfile="PlayerProfile"
+    @close="Show"
+    @upload_player="Upload"
+  />
 </template>
 
 <script>
 import Agent_profile_list from "./Agent_profile_list.vue";
+import Player_profile_modal from "./Player_profile_modal.vue";
 export default {
-  props: ["agent_profile"],
+  props: ["PlayerProfile"],
   data() {
     return {
       color: "#396aff",
@@ -60,22 +64,18 @@ export default {
       invite: "Invite",
       avatar: "",
       base_avatar: "./icons/base_avatar.png",
+      ShowModal: false,
     };
   },
   methods: {
-    Invite1() {
-      this.$emit("invited", this.agent_profile.id);
+    Upload(link) {
+      this.$emit("upload_player", link);
     },
-    Invited() {
-      if (this.agent_profile.invited === true) {
-        this.invite = "Invite send";
-        this.btn_color = "#E0E7EF";
-        this.btn_color_hover = "#E0E7EF";
-      }
+    Show() {
+      this.ShowModal = !this.ShowModal;
     },
-
     Color() {
-      switch (this.agent_profile.status) {
+      switch (this.PlayerProfile.status) {
         case "AFK":
           this.color = "#F6B73E";
           break;
@@ -93,15 +93,15 @@ export default {
   },
   computed: {
     img() {
-      if (this.agent_profile.avatar) {
-        return (this.avatar = this.agent_profile.avatar);
+      if (this.PlayerProfile.avatar) {
+        return (this.avatar = this.PlayerProfile.avatar);
       } else {
         return (this.avatar = require("@/icons/base_avatar.png"));
       }
     },
   },
 
-  components: { Agent_profile_list },
+  components: { Agent_profile_list, Player_profile_modal },
 };
 </script>
 
@@ -127,6 +127,7 @@ export default {
   justify-content: flex-start;
   flex-wrap: wrap;
 }
+
 .list_item1 {
   justify-items: end;
   font-family: Arial;

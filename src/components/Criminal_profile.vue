@@ -3,20 +3,25 @@
     <Icone_back style="margin-right: 11px" />BACK
   </button>
   <div class="profile">
-    <div class="img"></div>
+    <!-- <div class="img"></div> -->
+    <img class="img" :src="img" />
     <div class="list">
       <span class="header header1">LOS SANTOS POLICE DEP.</span>
       <span class="header header2"> CRIMINAL RECORD</span>
-      <span>name: {{ this.list.Fistname }}</span>
-      <span>Lastname: {{ this.list.Lastname }}</span>
-      <span>id: {{ this.list.id }}</span>
-      <span>Height: {{ this.list.height }}</span>
-      <span>Birthday: {{ this.list.birthday }}</span>
-      <span>Age: {{ this.list.age }}</span>
-      <span>Sex: {{ this.list.sex }}</span>
-      <span>Ethnicity: {{ this.list.ethnicity }}</span>
-      <span>Phone: {{ this.list.phone }}</span>
-      <span>Addres: {{ this.list.addres }}</span>
+      <span><span class="bold">name:</span> {{ this.list.Fistname }}</span>
+      <span>
+        <span class="bold">Lastname: </span> {{ this.list.Lastname }}</span
+      >
+      <span> <span class="bold">id: </span>{{ this.list.id }}</span>
+      <span> <span class="bold">Height: </span>{{ this.list.height }}</span>
+      <span> <span class="bold">Birthday: </span>{{ this.list.birthday }}</span>
+      <span> <span class="bold">Age: </span>{{ this.list.age }}</span>
+      <span> <span class="bold">Sex: </span>{{ this.list.sex }}</span>
+      <span>
+        <span class="bold">Ethnicity: </span>{{ this.list.ethnicity }}</span
+      >
+      <span> <span class="bold">Phone: </span>{{ this.list.phone }}</span>
+      <span> <span class="bold">Addres: </span>{{ this.list.addres }}</span>
     </div>
     <div class="icon_container">
       <div class="plate"></div>
@@ -35,14 +40,17 @@
   </div>
   <div class="list2_container">
     <div v-for="crime in this.list.history" class="list2">
-      <span>{{ crime.date }}</span>
-      <span>{{ crime.code }}</span>
-      <span>{{ crime.stations }}</span>
-      <span>{{ crime.motive }}</span>
-      <span>{{ crime.term }}</span>
+      <!-- props: ["date", "code", "stations", "motive", "term"], -->
+      <Criminal_profile_list
+        :date="crime.date"
+        :code="crime.code"
+        :stations="crime.stations"
+        :motive="crime.motive"
+        :term="crime.term"
+      />
     </div>
   </div>
-  <span class="c">Fingerprints</span>
+  <span class="c1">Fingerprints</span>
 
   <div class="a">
     <div class="prints_container prints_container1">
@@ -103,13 +111,30 @@
 import Icone_back from "@/icons/Icone_back.vue";
 
 import Finger1 from "@/finger/Finger1.vue";
+import Criminal_profile_list from "./Criminal_profile_list.vue";
 export default {
-  components: { Icone_back, Finger1 },
+  data() {
+    return {
+      avatar: "",
+      color: "",
+    };
+  },
+  components: { Icone_back, Finger1, Criminal_profile_list },
   props: ["list"],
   methods: {
     cl() {
       this.$emit("back", 2);
     },
+  },
+  computed: {
+    img() {
+      if (this.list.avatar) {
+        return (this.avatar = this.list.avatar);
+      } else {
+        return (this.avatar = require("@/icons/base_avatar.png"));
+      }
+    },
+    color() {},
   },
 };
 </script>
@@ -129,6 +154,12 @@ export default {
   border-radius: 10px;
 }
 
+.bold {
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: 700;
+  color: #222222;
+}
 .prints_container1 {
   order: -1;
 }
@@ -140,7 +171,7 @@ export default {
   margin-top: 38px;
   width: 268px;
   height: 268px;
-  background-color: aquamarine;
+  background-color: #f0f3f9;
 }
 
 .other_info_container {
@@ -149,6 +180,7 @@ export default {
 }
 
 .list2_container {
+  margin-bottom: 47px;
   display: flex;
   overflow: auto;
   max-height: 575px;
@@ -207,7 +239,7 @@ textarea {
   grid-template-rows: 27px 145px;
 }
 
-.c {
+.c1 {
   font-family: "Montserrat";
   font-size: 28px;
   margin-left: 108px;
@@ -247,8 +279,9 @@ textarea {
   border-top: 1px solid#454545;
   border-bottom: 1px solid#454545;
   align-items: center;
+
   display: grid;
-  grid-template-columns: 281px 192px 300px 420px 159px;
+  grid-template-columns: 281px 192px 300px 385px 159px;
 
   font-size: 22px;
   height: 80px;
@@ -310,11 +343,18 @@ h1 {
 }
 
 .header1 {
+  font-family: Arial;
+  font-weight: 700;
+  font-size: 23px;
   color: #222222;
   grid-area: header1;
   margin-top: 60px;
 }
 .header2 {
+  margin-top: 15px;
+  font-family: Arial;
+  font-weight: 700;
+  font-size: 16px;
   color: #222222;
   grid-area: header2;
 }
@@ -329,7 +369,7 @@ img {
   }
   .list2 {
     width: 1000px;
-    grid-template-columns: 207px 136px 248px 252px 80px;
+    grid-template-columns: 207px 136px 248px 210px 150px;
     font-size: 16px;
   }
   .list2_head {

@@ -1,4 +1,5 @@
 <template>
+  <span>{{ Invited() }}</span>
   <div class="item">
     <span @click="profile">{{ name }}</span>
     <span @click="Color">{{ rank }}</span>
@@ -12,7 +13,7 @@
 
 <script>
 export default {
-  props: ["id", "name", "rank", "status", "distance"],
+  props: ["invited", "id", "name", "rank", "status", "distance"],
   data() {
     return {
       color: "#F6B73E",
@@ -48,10 +49,15 @@ export default {
       }
       console.log(this.color);
     },
+    Invited() {
+      if (this.invited === true) {
+        this.invite = "Invite send";
+        this.btn_color = "#E0E7EF";
+        this.btn_color_hover = "#E0E7EF";
+      }
+    },
     Invite() {
-      this.invite = "Invite send";
-      this.btn_color = "#E0E7EF";
-      this.btn_color_hover = "#E0E7EF";
+      this.$emit("invited", this.id);
     },
   },
 };
