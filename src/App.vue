@@ -1,5 +1,10 @@
 <template>
-  <div class="app">
+  <Login
+    :PlayerProfile="PlayerProfile"
+    @cl="switchPage"
+    v-if="Login === false"
+  />
+  <div class="app" v-if="Login === true">
     <div class="header">
       <UpperPplate
         @search="Search"
@@ -19,6 +24,8 @@
         @cl="switchPage"
         @invited="Invited"
         @upload="Upload"
+        @upload_player="UploadPlayer"
+        @deleteCall="deleteCall"
         :agent_profile="this.AgentsList[index_agent]"
         :CriminalList="this.CriminalList"
         :list="this.CriminalList[this.index]"
@@ -30,46 +37,92 @@
         :cars="this.Cars"
         :InventoryHistory="this.InventoryHistory"
         :PlayerProfile="PlayerProfile"
-        @upload_player="UploadPlayer"
+        :CitizensCallList="CitizensCallList"
       ></component>
     </div>
   </div>
 </template>
 
 <script>
-import Cars from "./components/Cars.vue";
-import Search from "./components/Search.vue";
-import Stuff from "./components/Stuff.vue";
-import UpperPplate from "./components/UpperPplate.vue";
-import Sidebar from "./components/Sidebar.vue";
-import Home from "./components/Home.vue";
-import Criminal_files from "./components/Criminal_files.vue";
-import Criminal_profile from "./components/Criminal_profile.vue";
-import Agents from "./components/Agents.vue";
-import Agent_profile from "./components/Agent_profile.vue";
-import Player_profile from "./components/Player_profile.vue";
+import Agents from "./components/Pages/Agents/Agents.vue";
+import Cars from "./components/Pages/Cars/Cars.vue";
+import Home from "./components/Pages/Home/Home.vue";
+import Criminal_files from "./components/Pages/Criminal Files/Criminal_files.vue";
+import Criminal_profile from "./components/Pages/Criminal Files/Criminal_profile.vue";
+import Agent_profile from "./components/Pages/Agents/Agent_profile.vue";
+import CallList from "./components/Pages/Calls/CallList.vue";
+import Sidebar from "./components/UI/Sidebar.vue";
+import UpperPplate from "./components/UI/UpperPplate.vue";
+import Search from "./components/UI/Search.vue";
+import Login from "./components/Player/Login.vue";
+import Stuff from "./components/Pages/Inventory/Stuff.vue";
+import Player_profile from "./components/Player/Player_profile.vue";
 
 export default {
+  emits: [
+    "back",
+    "ItemID",
+    "AgentID",
+    "cl",
+    "invited",
+    "upload",
+    "upload_player",
+    "deleteCall",
+  ],
   components: {
-    UpperPplate,
-    Sidebar,
+    Agents,
+    Cars,
     Home,
     Criminal_files,
     Criminal_profile,
-    Stuff,
-    Search,
-    Agents,
     Agent_profile,
-    Cars,
+    CallList,
+    Sidebar,
+    UpperPplate,
+    Search,
+    Login,
+    Stuff,
     Player_profile,
   },
   data() {
     return {
-      name: "Stuff",
+      Login: true,
+      index_agent: 0,
+      name: "Home",
       index: 1,
-      currentPageID: 3,
+      currentPageID: 1,
       SearchResalut: [],
       SearchInput1: this.SearchInput,
+      CitizensCallList: [
+        {
+          id: Math.random(),
+          name: "James brown",
+          time: "10:22",
+          massage: "HELP ME, THEY WANT TO KILL ME!!!!!!",
+          distance: "1.5km",
+        },
+        {
+          id: Math.random(),
+          name: "Billy brown",
+          time: "10:22",
+          massage: "HELP ME, THEY WANT TO KILL ME!!!!!!",
+          distance: "1.5km",
+        },
+        {
+          id: Math.random(),
+          name: "James brown",
+          time: "10:22",
+          massage: "HELP ME, THEY WANT TO KILL ME!!!!!!",
+          distance: "1.5km",
+        },
+        {
+          id: Math.random(),
+          name: "Jack brown",
+          time: "10:22",
+          massage: "HELP ME, THEY WANT TO KILL ME!!!!!!",
+          distance: "1.5km",
+        },
+      ],
       CriminalList: [
         {
           id: 112,
@@ -380,6 +433,7 @@ export default {
               status: "Abandonned",
             },
           ],
+          medals: [],
         },
         {
           avatar: "",
@@ -429,6 +483,7 @@ export default {
               status: "Abandonned",
             },
           ],
+          medals: [],
         },
         {
           avatar: "",
@@ -478,6 +533,7 @@ export default {
               status: "Abandonned",
             },
           ],
+          medals: [],
         },
         {
           avatar: "",
@@ -527,6 +583,20 @@ export default {
               status: "Abandonned",
             },
           ],
+          medals: [
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+            },
+          ],
         },
       ],
       Inventory: [
@@ -538,7 +608,7 @@ export default {
       Cars: [
         {
           vehicule: "Car #1",
-          name: "James Brown",
+          name: "billy Brown",
           rank: "Capitan II ",
           health: "80%",
           fuel: "74%",
@@ -683,6 +753,8 @@ export default {
         distance: "2.5Km",
         birthday: "21.01.2002",
         phone: "666-1234",
+        login: "james",
+        password: "a",
         history: [
           {
             name: "Robbery in city",
@@ -721,10 +793,65 @@ export default {
             status: "Abandonned",
           },
         ],
+        medals: [
+          {
+            id: Math.random(),
+            img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+          },
+          {
+            id: Math.random(),
+            img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+          },
+        ],
       },
     };
   },
   methods: {
+    deleteCall(id) {
+      this.CitizensCallList = this.CitizensCallList.filter(
+        (el) => el.id !== id
+      );
+    },
     Status(id) {
       switch (id) {
         case 1:
@@ -758,15 +885,14 @@ export default {
         this.AgentsList.findIndex((el) => el.id === id)
       ].invited = true;
     },
-    cl(id) {
-      console.log(id);
-    },
+
     switchPage(pageID) {
       console.log(pageID);
       this.currentPageID = pageID;
       switch (pageID) {
         case 1:
           this.name = "Home";
+          this.Login = true;
           break;
         case 2:
           this.name = "Criminal_files";
@@ -776,11 +902,12 @@ export default {
 
           break;
         case 4:
+          this.name = "CallList";
           break;
         case 5:
           this.name = "Agents";
           break;
-        case 6:
+        case 9:
           this.name = "Criminal_profile";
           break;
         case 7:
@@ -789,21 +916,22 @@ export default {
         case 8:
           this.name = "Agent_profile";
           break;
-        case 9:
+        case 6:
           this.name = "Cars";
           break;
         case 10:
           this.name = "Player_profile";
           break;
+        case 11:
+          this.Login = false;
+          break;
       }
     },
     profile(id) {
       this.index = this.CriminalList.findIndex((el) => el.id === id);
-      console.log(this.index);
     },
     agent_profile(id) {
       this.index_agent = this.AgentsList.findIndex((el) => el.id === id);
-      console.log(this.index);
     },
     Upload(link, id) {
       this.CriminalList[
@@ -847,7 +975,7 @@ export default {
 
 .sidebar {
   width: 300px;
-  height: 925px;
+  height: 935px;
   background-color: white;
   font-family: "Montserrat";
   font-size: 16px;
