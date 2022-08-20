@@ -55,9 +55,8 @@
 </template>
 
 <script>
-import Icon_seacrh from "@/icons/Icon_seacrh.vue";
-import Icon_profile from "@/icons/Icon_profile.vue";
-
+import Icon_seacrh from "@/Assets/icons/Icon_seacrh.vue";
+import Icon_profile from "@/Assets/icons/Icon_profile.vue";
 export default {
   emits: ["cl", "status", "search"],
   props: ["PlayerProfile"],

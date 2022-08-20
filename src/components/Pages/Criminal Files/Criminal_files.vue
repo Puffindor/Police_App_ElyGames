@@ -35,20 +35,22 @@
 </template>
 
 <script>
-import Icon_triangle from "@/icons/Icon_triangle.vue";
-import Icon_edite from "@/icons/Icon_edite.vue";
 import Modal from "./modal.vue";
 import Criminal_profile from "./Criminal_profile.vue";
 import Criminal_list from "./Criminal_list.vue";
+import Icon_triangle from "@/Assets/icons/Icon_triangle.vue";
+import Icon_edite from "@/Assets/icons/Icon_edite.vue";
 export default {
   emits: ["upload", "cl", "ItemID"],
   props: ["CriminalList"],
   components: {
     Icon_triangle,
-    Icon_edite,
+
     Modal,
     Criminal_profile,
     Criminal_list,
+
+    Icon_edite,
   },
 
   data() {

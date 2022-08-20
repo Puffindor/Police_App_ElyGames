@@ -35,23 +35,24 @@
 </template>
 
 <script>
-import Icone_home from "@/icons/Icone_home.vue";
-import Icone_files from "@/icons/Icone_files.vue";
-import Icon_stuff from "@/icons/Icon_stuff.vue";
-import Icon_list from "@/icons/Icon_list.vue";
-import Icon_agents from "@/icons/Icon_agents.vue";
+import Icon_agents from "@/Assets/icons/Icon_agents.vue";
 
-import Icon_car from "@/icons/Icon_car.vue";
-import Icon_logout from "../../icons/Icon_logout.vue";
+import Icon_stuff from "@/Assets/icons/Icon_stuff.vue";
+import Icon_car from "@/Assets/icons/Icon_car.vue";
+import Icone_home from "@/Assets/icons/Icone_home.vue";
+import Icone_files from "@/Assets/icons/Icone_files.vue";
+import Icon_list from "@/Assets/icons/Icon_list.vue";
+import Icon_logout from "../../Assets/icons/Icon_logout.vue";
+
 export default {
   emits: ["cl"],
   components: {
+    Icon_agents,
+    Icon_stuff,
+    Icon_car,
     Icone_home,
     Icone_files,
-    Icon_stuff,
     Icon_list,
-    Icon_agents,
-    Icon_car,
     Icon_logout,
   },
   props: {

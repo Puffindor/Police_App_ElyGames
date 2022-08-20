@@ -63,12 +63,17 @@
 </template>
 
 <script>
-import Icon_red_cross from "@/icons/Icon_red_cross.vue";
-import Icon_upload from "@/icons/Icon_upload.vue";
-import Icon_lock from "@/icons/Icon_lock.vue";
+import Icon_red_cross from "@/Assets/icons/Icon_red_cross.vue";
+import Icon_upload from "@/Assets/icons/Icon_upload.vue";
+import Icon_lock from "@/Assets/icons/Icon_lock.vue";
+
 export default {
   emits: ["close", "upload_player"],
-  components: { Icon_red_cross, Icon_upload, Icon_lock },
+  components: {
+    Icon_red_cross,
+    Icon_upload,
+    Icon_lock,
+  },
   props: ["PlayerProfile"],
   data() {
     return {

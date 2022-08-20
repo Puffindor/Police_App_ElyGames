@@ -46,10 +46,14 @@
 </template>
 
 <script>
-import Icon_search_small from "@/icons/Icon_search_small.vue";
-import Icon_location from "@/icons/Icon_location.vue";
+import Icon_search_small from "@/Assets/icons/Icon_search_small.vue";
+import Icon_location from "@/Assets/icons/Icon_location.vue";
+
 export default {
-  components: { Icon_search_small, Icon_location },
+  components: {
+    Icon_search_small,
+    Icon_location,
+  },
 
   props: ["cars"],
   data() {

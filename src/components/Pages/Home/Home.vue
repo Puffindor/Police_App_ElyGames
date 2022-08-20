@@ -91,16 +91,18 @@
 </template>
 
 <script>
-import Icon_location from "@/icons/Icon_location.vue";
-import Icon_cross from "@/icons/Icon_cross.vue";
-import Icon_triangle from "@/icons/Icon_triangle.vue";
 import Home_list from "./Home_list.vue";
+import Icon_red_cross from "@/Assets/icons/Icon_red_cross.vue";
+import Icon_triangle from "@/Assets/icons/Icon_triangle.vue";
+import Icon_cross from "@/Assets/icons/Icon_cross.vue";
+import Icon_location from "@/Assets/icons/Icon_location.vue";
 export default {
   components: {
     Icon_location,
     Icon_cross,
     Icon_triangle,
     Home_list,
+    Icon_red_cross,
   },
 
   data() {

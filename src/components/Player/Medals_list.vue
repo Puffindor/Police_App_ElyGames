@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Chevron_right from "@/icons/chevron_right.vue";
-import Chevron_left from "@/icons/chevron_left.vue";
+import Chevron_left from "@/Assets/icons/chevron_left.vue";
+import Chevron_right from "@/Assets/icons/chevron_right.vue";
 export default {
   props: ["Medals"],
   data() {
@@ -67,7 +67,7 @@ export default {
       return this.Medals.slice(this.first, this.last);
     },
   },
-  components: { Chevron_right, Chevron_left },
+  components: { Chevron_left, Chevron_right },
 };
 </script>
 

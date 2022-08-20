@@ -30,12 +30,16 @@
 </template>
 
 <script>
-import Icon_search_small from "@/icons/Icon_search_small.vue";
-import Icon_triangle from "@/icons/Icon_triangle.vue";
 import Agents_list from "./Agents_list.vue";
+import Icon_search_small from "@/Assets/icons/Icon_search_small.vue";
+import Icon_triangle from "@/Assets/icons/Icon_triangle.vue";
 export default {
   emits: ["AgentID", "cl", "invited"],
-  components: { Icon_search_small, Icon_triangle, Agents_list },
+  components: {
+    Icon_triangle,
+    Agents_list,
+    Icon_search_small,
+  },
   props: ["AgentsList"],
   data() {
     return {

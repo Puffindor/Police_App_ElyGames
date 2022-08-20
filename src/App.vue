@@ -601,7 +601,7 @@ export default {
       ],
       Inventory: [
         {
-          img: require("@/components/Assets/Stick.png"),
+          img: require("@/Assets/Stick.png"),
           amount: 10,
         },
       ],
@@ -966,6 +966,7 @@ export default {
 }
 
 .content {
+  max-width: 2880px;
   grid-area: content;
   background-color: #f9faff;
 }

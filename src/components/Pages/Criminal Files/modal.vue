@@ -112,9 +112,10 @@
 </template>
 
 <script>
-import Icon_red_cross from "@/icons/Icon_red_cross.vue";
-import Icon_lock from "@/icons/Icon_lock.vue";
-import Icon_upload from "@/icons/Icon_upload.vue";
+import Icon_red_cross from "@/Assets/icons/Icon_red_cross.vue";
+import Icon_lock from "@/Assets/icons/Icon_lock.vue";
+import Icon_upload from "@/Assets/icons/Icon_upload.vue";
+
 export default {
   emits: ["upload", "close"],
   data() {
@@ -123,7 +124,11 @@ export default {
       Link: "",
     };
   },
-  components: { Icon_red_cross, Icon_lock, Icon_upload },
+  components: {
+    Icon_lock,
+    Icon_upload,
+    Icon_red_cross,
+  },
   props: ["PopupProfile"],
   ethnicity: "",
   addres: "",

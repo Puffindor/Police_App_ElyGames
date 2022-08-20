@@ -3,7 +3,6 @@
     <h1>List of Citizen Calls</h1>
     <div class="search_inp">
       <input placeholder="Search" v-model="this.SearchInput" />
-
       <Icon_search_small />
     </div>
     <div class="list">
@@ -22,11 +21,12 @@
 </template>
 
 <script>
-import Icon_search_small from "@/icons/Icon_search_small.vue";
 import CallList_list from "./CallList_list.vue";
+import Icon_search_small from "@/Assets/icons/Icon_search_small.vue";
+
 export default {
   emits: ["deleteCall"],
-  components: { Icon_search_small, CallList_list },
+  components: { CallList_list, Icon_search_small },
   props: ["CitizensCallList"],
   data() {
     return {

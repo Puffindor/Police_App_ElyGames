@@ -57,7 +57,7 @@ export default {
         this.List[this.List.findIndex((el) => el.amount === "")].amount = 100;
         this.List[
           this.List.findIndex((el) => el.img === "")
-        ].img = require("@/components/Assets/Stick.png");
+        ].img = require("@//Assets/Stick.png");
         if (this.List.findIndex((el) => el.amount === "") === -1) {
           for (let i = 0; i < 4; i++) {
             this.List.push({ amount: "", img: "" });
@@ -67,7 +67,7 @@ export default {
         this.List[this.List.findIndex((el) => el.amount === "")].amount = 100;
         this.List[
           this.List.findIndex((el) => el.img === "")
-        ].img = require("@/components/Assets/Stick.png");
+        ].img = require("@//Assets/Stick.png");
         if (this.List.findIndex((el) => el.amount === "") === -1) {
           for (let i = 0; i < 6; i++) {
             this.List.push({ amount: "", img: "" });

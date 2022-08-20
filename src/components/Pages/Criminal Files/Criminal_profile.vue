@@ -110,10 +110,9 @@
 </template>
 
 <script>
-import Icone_back from "@/icons/Icone_back.vue";
-
-import Finger1 from "@/finger/Finger1.vue";
+import Finger1 from "@/Assets/finger/Finger1.vue";
 import Criminal_profile_list from "./Criminal_profile_list.vue";
+import Icone_back from "@/Assets/icons/Icone_back.vue";
 export default {
   emits: ["back"],
   data() {
@@ -121,7 +120,7 @@ export default {
       avatar: "",
     };
   },
-  components: { Icone_back, Finger1, Criminal_profile_list },
+  components: { Finger1, Criminal_profile_list, Icone_back },
   props: ["list"],
   methods: {
     cl() {

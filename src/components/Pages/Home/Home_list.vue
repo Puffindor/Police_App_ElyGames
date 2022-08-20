@@ -5,13 +5,15 @@
   <span class="rank">{{ rank }}</span>
   <span class="distance">{{ distance }} </span>
   <button class="btn_accept">Accept</button>
+
   <button class="btn_loc"><Icon_location /></button>
   <button @click="Delete" class="btn_cross"><Icon_cross /></button>
 </template>
 
 <script>
-import Icon_cross from "@/icons/Icon_cross.vue";
-import Icon_location from "@/icons/Icon_location.vue";
+import Icon_cross from "@/Assets/icons/Icon_cross.vue";
+import Icon_location from "@/Assets/icons/Icon_location.vue";
+
 export default {
   emits: ["delete"],
   props: ["id", "name", "time", "code", "rank", "distance"],
