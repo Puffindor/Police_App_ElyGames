@@ -59,10 +59,10 @@ export default {
   color: #253042;
   font-weight: 700;
   display: grid;
-  grid-template-columns: 135px 277px 191px 238px 184px 211px 100px;
+  grid-template-columns: 6.5vw 13.5vw 9.2vw 11vw 9.5vw 211px 100px;
   margin-left: 114px;
 
-  width: 1352px;
+  width: 62vw;
   height: 80px;
   align-items: center;
   border-bottom: 1px solid #c6cddf;
@@ -73,6 +73,19 @@ export default {
     grid-template-columns: 85px 227px 141px 188px 134px 160px 50px;
     width: 980px;
     margin-left: 20px;
+  }
+}
+@media screen and (min-width: 2559px) {
+  .list_item {
+    width: 74vw;
+    grid-template-columns: 6.5vw 13.5vw 9.2vw 25vw 9.5vw 211px 100px;
+  }
+}
+@media screen and (min-width: 3839px) {
+  .list_item {
+    font-size: 30px;
+    width: 71vw;
+    grid-template-columns: 6.5vw 13.5vw 9.2vw 25vw 9.5vw 211px 100px;
   }
 }
 </style>

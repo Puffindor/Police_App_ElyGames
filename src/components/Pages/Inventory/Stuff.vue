@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { def } from "@vue/shared";
 import Inventory_cell from "./Inventory_cell.vue";
 import Inventory_history from "./Inventory_history.vue";
 export default {
@@ -38,45 +39,52 @@ export default {
   methods: {
     Log() {
       this.List = this.inventory;
-      if (window.screen.width < 1401) {
-        if (this.inventory.length < 20) {
-          for (let i = 0; i < 20 - this.inventory.length; i++) {
-            this.List.push({ img: "", amount: "" });
-          }
-        }
-      } else {
-        if (this.inventory.length < 30) {
-          for (let i = 0; i < 30 - this.inventory.length; i++) {
-            this.List.push({ img: "", amount: "" });
-          }
+
+      if (this.inventory.length < this.ScreenSize) {
+        for (let i = 0; i < this.ScreenSize - this.inventory.length; i++) {
+          this.List.push({ img: "", amount: "" });
         }
       }
     },
+
     Add() {
-      if (window.screen.width < 1401) {
-        this.List[this.List.findIndex((el) => el.amount === "")].amount = 100;
-        this.List[
-          this.List.findIndex((el) => el.img === "")
-        ].img = require("@//Assets/Stick.png");
-        if (this.List.findIndex((el) => el.amount === "") === -1) {
-          for (let i = 0; i < 4; i++) {
-            this.List.push({ amount: "", img: "" });
-          }
-        }
-      } else {
-        this.List[this.List.findIndex((el) => el.amount === "")].amount = 100;
-        this.List[
-          this.List.findIndex((el) => el.img === "")
-        ].img = require("@//Assets/Stick.png");
-        if (this.List.findIndex((el) => el.amount === "") === -1) {
-          for (let i = 0; i < 6; i++) {
-            this.List.push({ amount: "", img: "" });
-          }
+      this.List[this.List.findIndex((el) => el.amount === "")].amount = 100;
+      this.List[
+        this.List.findIndex((el) => el.img === "")
+      ].img = require("@//Assets/Stick.png");
+      if (this.List.findIndex((el) => el.amount === "") === -1) {
+        for (let i = 0; i < this.ScreenSize2; i++) {
+          this.List.push({ amount: "", img: "" });
         }
       }
     },
   },
-  computed: {},
+  computed: {
+    ScreenSize() {
+      switch (window.screen.width) {
+        case 1400:
+          return 20;
+        case 2560:
+          return 56;
+        case 3840:
+          return 165;
+        default:
+          return 30;
+      }
+    },
+    ScreenSize2() {
+      switch (window.screen.width) {
+        case 1400:
+          return 4;
+        case 2560:
+          return 8;
+        case 3840:
+          return 15;
+        default:
+          return 6;
+      }
+    },
+  },
   components: { Inventory_cell, Inventory_history },
 };
 </script>

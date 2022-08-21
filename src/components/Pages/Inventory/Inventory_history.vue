@@ -35,4 +35,16 @@ export default {
   display: grid;
   grid-template-columns: 195px 135px;
 }
+@media screen and (min-width: 3839px) {
+  .item {
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 700;
+    height: 80px;
+    align-items: center;
+    border-bottom: 1px solid #c6cddf;
+    display: grid;
+    grid-template-columns: 360px 160px;
+  }
+}
 </style>

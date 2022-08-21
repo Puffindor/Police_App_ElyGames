@@ -4,7 +4,7 @@
     @cl="switchPage"
     v-if="Login === false"
   />
-  <div class="app" v-if="Login === true">
+  <div class="app1" v-if="Login === true">
     <div class="header">
       <UpperPplate
         @search="Search"
@@ -13,9 +13,9 @@
         :PlayerProfile="PlayerProfile"
       />
     </div>
-    <div class="sidebar">
-      <Sidebar @cl="switchPage" :currentPageID="currentPageID" />
-    </div>
+
+    <Sidebar @cl="switchPage" :currentPageID="currentPageID" />
+
     <div class="content">
       <component
         @back="switchPage"
@@ -131,7 +131,397 @@ export default {
           sex: "male",
           birthday: "21.01.2021",
           phone: "454 - 0000",
-          record: 0,
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
+          height: "1.89m",
+          age: 19,
+          addres: "Nope",
+          ethnicity: "Afro-moldave",
+          otherInfo: "This has nothing to do with the criminal records. a.",
+          history: [],
+        },
+        {
+          id: 112,
+          Fistname: "Billy",
+          Lastname: "Williams",
+          sex: "male",
+          birthday: "21.01.2021",
+          phone: "454 - 0000",
+          record: 1,
           height: "1.89m",
           age: 19,
           addres: "Nope",
@@ -697,6 +1087,38 @@ export default {
           action: "-5 Seringues",
         },
         {
+          name: "James Williams",
+          action: "-5 Seringues",
+        },
+        {
+          name: "James Williams",
+          action: "-5 Seringues",
+        },
+        {
+          name: "James Williams",
+          action: "-5 Seringues",
+        },
+        {
+          name: "James Williams",
+          action: "-5 Seringues",
+        },
+        {
+          name: "James Williams",
+          action: "-5 Seringues",
+        },
+        {
+          name: "James Williams",
+          action: "-5 Seringues",
+        },
+        {
+          name: "James Williams",
+          action: "-5 Seringues",
+        },
+        {
+          name: "James Williams",
+          action: "-5 Seringues",
+        },
+        {
           name: "Billy Williams",
           action: "+500 Seringues",
         },
@@ -952,52 +1374,49 @@ export default {
   box-sizing: border-box;
 }
 
-.app {
-  display: flex;
-  flex-direction: column;
-}
-
-.app {
+.app1 {
   display: grid;
   grid-template-areas:
     "header header"
     "sidebar content";
   grid-template-columns: 300px 1fr;
+  grid-template-rows: 115px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .content {
-  max-width: 2880px;
   grid-area: content;
   background-color: #f9faff;
 }
 .header {
+  height: 115px;
   grid-area: header;
 }
 
 .sidebar {
-  width: 300px;
-  height: 935px;
-  background-color: white;
-  font-family: "Montserrat";
-  font-size: 16px;
-  box-shadow: 10px 0px 50px rgba(0, 0, 0, 0.08);
-  z-index: 1;
   grid-area: sidebar;
 }
 
 @media screen and (max-width: 1401px) {
-  .sidebar {
-    height: 980px;
+  .app1 {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "sidebar content";
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 115px;
+    width: 100vw;
+    height: 100vh;
+    justify-items: end;
   }
 }
 @media screen and (min-width: 2048px) {
-  .sidebar {
-    height: 100%;
-  }
 }
-@media screen and (min-width: 2879px) {
-  .sidebar {
-    height: 1805px;
+@media screen and (min-width: 3839px) {
+  .app1 {
+    grid-template-rows: 200px;
+    grid-template-columns: 400px 1fr;
   }
 }
 </style>

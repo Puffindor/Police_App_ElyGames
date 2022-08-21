@@ -258,7 +258,6 @@ h1 {
   width: 288px;
   height: 288px;
   border-radius: 6px;
-  background-color: aqua;
 }
 .form_item_string {
   font-family: Arial;
@@ -414,5 +413,22 @@ h1 {
   .Height {
     order: 7;
   }
+  @media screen and (min-width: 2047px) {
+  }
+  @media screen and (min-width: 2559px) {
+  }
+
+  @media screen and (min-width: 3839px) {
+    .popup_inner {
+      width: 3000px;
+      height: 769px;
+      background-color: red;
+      border-radius: 10px;
+    }
+  }
+
+  /* 2048×1080 2K */
+  /* 2560x1440 3K */
+  /* 3840 Х 2160 */
 }
 </style>

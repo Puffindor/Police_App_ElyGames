@@ -22,9 +22,9 @@ h1 {
 .container {
   display: flex;
   flex-wrap: wrap;
-  max-height: 720px;
+  max-height: 70vh;
   overflow: auto;
-  width: 360px;
+  width: 350px;
 }
 .list_head {
   font-family: "Segoe UI";
@@ -33,7 +33,7 @@ h1 {
   color: #a1acc0;
 
   display: grid;
-  grid-template-columns: 195px 53px;
+  grid-template-columns: 9.5vw 53px;
   margin-top: 30px;
 }
 .cell {
@@ -41,7 +41,9 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   width: 138px;
+
   height: 138px;
+
   border-radius: 6px;
   background-color: #f0f3f9;
 }
@@ -54,12 +56,14 @@ h2 {
 }
 .Stuff {
   display: grid;
-  grid-template-columns: 1020px 700px;
+  grid-template-columns: 1020px 500px;
   column-gap: 35px;
 }
 .inventory {
   width: 920px;
-  height: 750px;
+  /* width: 44vw; */
+  /* height: 750px; */
+  height: 72vh;
   overflow: auto;
   display: grid;
   grid-template-columns: repeat(6, 138px);
@@ -82,4 +86,58 @@ h2 {
   .Stuff {
     grid-template-columns: 650px 400px;
   }
+  .cell {
+    width: 138px;
+
+    height: 138px;
+  }
 }
+
+@media screen and (min-width: 2047px) {
+}
+@media screen and (min-width: 2559px) {
+  .cell {
+    width: 138px;
+
+    height: 138px;
+  }
+  .inventory {
+    width: 48vw;
+    height: 73vh;
+    grid-template-columns: repeat(8, 138px);
+    grid-template-rows: repeat(5, 138px);
+  }
+  .Stuff {
+    display: grid;
+    grid-template-columns: 1450px 700px;
+    column-gap: 35px;
+  }
+}
+
+@media screen and (min-width: 3839px) {
+  .Stuff {
+    display: grid;
+    grid-template-columns: 2500px 700px;
+    column-gap: 35px;
+  }
+  .inventory {
+    width: 60vw;
+    height: 77.3vh;
+    grid-template-columns: repeat(15, 138px);
+    grid-template-rows: repeat(10, 138px);
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 77.3vh;
+    overflow: auto;
+    width: 14vw;
+  }
+  .list_head {
+    font-size: 20px;
+  }
+}
+
+/* 2048×1080 2K */
+/* 2560x1440 3K */
+/* 3840 Х 2160 */

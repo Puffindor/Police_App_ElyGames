@@ -1,8 +1,8 @@
 <template>
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="23"
-    height="23"
+    :width="size"
+    :height="size"
     viewBox="0 0 32.616 27.573"
   >
     <path
@@ -17,6 +17,7 @@
 export default {
   props: {
     color: "",
+    size: "",
   },
 };
 </script>

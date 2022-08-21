@@ -1,11 +1,11 @@
 <template>
   <div class="UpperPlate">
     <div class="logo_container">
-      <img src="@/Assets/icons/logo_large.png" class="img2" />
+      <Logo_header :logo_size="LogoSize" :viewBox="viewBox" />
       <strong class="logo_string"> L.S.P.D </strong>
     </div>
     <div class="search">
-      <Icon_seacrh @click="OpenSearch" />
+      <Icon_seacrh :size="IconSize" @click="OpenSearch" />
       <span class="string"> Search </span>
       <input
         @input="this.SearchInput = $event.target.value"
@@ -57,15 +57,17 @@
 <script>
 import Icon_seacrh from "@/Assets/icons/Icon_seacrh.vue";
 import Icon_profile from "@/Assets/icons/Icon_profile.vue";
+import Logo_header from "@/Assets/icons/Logo_header.vue";
 export default {
   emits: ["cl", "status", "search"],
   props: ["PlayerProfile"],
-  components: { Icon_seacrh, Icon_profile },
+  components: { Icon_seacrh, Icon_profile, Logo_header },
   data() {
     return {
       avatar: "",
       SearchInput: "",
       ShowModal: false,
+      viewBox: "0 0 72 72",
     };
   },
   input: "",
@@ -91,6 +93,22 @@ export default {
     },
   },
   computed: {
+    IconSize() {
+      if (window.screen.width > 3839) {
+        return 45;
+      } else {
+        return 26;
+      }
+    },
+    LogoSize() {
+      if (window.screen.width > 3839) {
+        this.viewBox = "0 0 200 200";
+        return 200;
+      } else {
+        this.viewBox = "0 0 72 72";
+        return 72;
+      }
+    },
     img() {
       if (this.PlayerProfile.avatar) {
         return (this.avatar = this.PlayerProfile.avatar);
@@ -243,9 +261,7 @@ strong {
   background-color: white;
   z-index: 10000;
 }
-.img2 {
-  margin-left: 22px;
-}
+
 .img {
   width: 73px;
   height: 73px;
@@ -305,7 +321,7 @@ strong {
 }
 .player {
   cursor: pointer;
-  margin-left: 1100px;
+  margin-left: 45vw;
   font-family: "Segoe UI";
   font-weight: 600;
   font-size: 20px;
@@ -355,32 +371,97 @@ strong {
 .UpperPlate {
   display: flex;
   align-items: center;
-
-  width: 100%;
+  width: 100vw;
   height: 115px;
   background-color: #121924;
   z-index: 10;
 }
 
-@media screen and (min-width: 2879px) {
+@media screen and (max-width: 1401px) {
+  .modal {
+    margin-top: 150px;
+    margin-left: 1000px;
+  }
+  .player {
+    margin-left: 420px;
+  }
   .UpperPlate {
-    height: 180px;
+    position: absolute;
+    left: 0;
+  }
+}
+
+@media screen and (min-width: 2047px) {
+  .player {
+    margin-left: 1000px;
+  }
+  .modal {
+    margin-left: 1700px;
+  }
+}
+@media screen and (min-width: 2559px) {
+  .player {
+    margin-left: 1600px;
+  }
+  .modal {
+    margin-left: 2200px;
+  }
+}
+
+@media screen and (min-width: 3839px) {
+  .UpperPlate {
+    height: 200px;
   }
   .string {
-    font-size: 34px;
+    font-size: 40px;
   }
   .input {
     width: 400px;
-    font-size: 34px;
+    font-size: 38px;
   }
   .search {
-    grid-template-columns: 54px 120px 190px;
-    align-items: center;
+    grid-template-columns: 100px 150px 190px;
   }
-}
-@media screen and (max-width: 1401px) {
+  .logo_string {
+    font-size: 60px;
+  }
+
+  .logo_container {
+    font-size: 41px;
+    justify-content: space-around;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    border-right: solid 1px #1f2632;
+  }
+  .logo_string {
+    margin-left: 20px;
+  }
+  .modal {
+    margin-left: 3300px;
+  }
+  .img {
+    width: 100px;
+    height: 100px;
+    margin-top: 60px;
+  }
+  .name {
+    font-size: 40px;
+  }
+  .rank {
+    font-size: 40px;
+  }
   .player {
-    margin-left: 473px;
+    grid-template-columns: 100px 300px;
+    grid-template-rows: 100px 100px;
+    margin-left: 2400px;
+  }
+  .status_indicator {
+    width: 20px;
+    height: 20px;
+
+    margin-left: 70px;
+    transform: translateY(-25px);
   }
 }
 </style>

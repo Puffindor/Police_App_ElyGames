@@ -97,9 +97,8 @@ export default {
 }
 
 .list_container {
-  width: 1500px;
+  width: 70vw;
   display: flex;
-
   justify-content: flex-start;
   flex-wrap: wrap;
   overflow: auto;
@@ -120,7 +119,7 @@ export default {
   font-size: 18px;
   margin-left: 114px;
   display: grid;
-  grid-template-columns: 135px 277px 191px 238px 184px 421px;
+  grid-template-columns: 6.5vw 13.5vw 9.2vw 11vw 9.5vw 211px;
 }
 
 h1 {
@@ -130,7 +129,7 @@ h1 {
   font-weight: 1000;
   font-size: 32px;
 }
-.criminal_files {
+/* .criminal_files {
   display: grid;
   grid-template-areas:
     "header header"
@@ -145,16 +144,8 @@ h1 {
   grid-area: header;
 }
 .sidebar {
-  width: 300px;
-  height: 965px;
-  background-color: white;
-  font-family: "Montserrat";
-  font-weight: 700;
-
-  font-size: 16px;
-  box-shadow: 10px 0px 50px rgba(0, 0, 0, 0.08);
   grid-area: sidebar;
-}
+} */
 
 @media screen and (max-width: 1401px) {
   .list {
@@ -174,4 +165,30 @@ h1 {
     max-height: 750px;
   }
 }
+
+@media screen and (min-width: 2047px) {
+}
+@media screen and (min-width: 2559px) {
+  .list_container {
+    width: 80vw;
+    max-height: 77vh;
+  }
+  .list {
+    grid-template-columns: 6.5vw 13.5vw 9.2vw 25vw 9.5vw 211px;
+  }
+}
+
+@media screen and (min-width: 3839px) {
+  .list {
+    font-size: 30px;
+    grid-template-columns: 6.5vw 13.5vw 9.2vw 25vw 9.5vw 250px;
+  }
+  .list_container {
+    width: 75vw;
+  }
+}
+
+/* 2048×1080 2K */
+/* 2560x1440 3K */
+/* 3840 Х 2160 */
 </style>
