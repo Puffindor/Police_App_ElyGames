@@ -10,7 +10,7 @@
       </div>
       <div class="password_container">
         <input placeholder="identifiant..." v-model="this.password" />
-        <button @click="Login" class="enter"></button>
+        <button @click="Login" class="enter"><Icon_login /></button>
       </div>
     </div>
     <div class="pic1">
@@ -22,9 +22,10 @@
 <script>
 import Login_pic1 from "@/Assets/login_pic1.vue";
 import Login_pic2 from "@/Assets/login_pic2.vue";
+import Icon_login from "@/Assets/icons/Icon_login.vue";
 export default {
   emits: ["cl"],
-  components: { Login_pic1, Login_pic2 },
+  components: { Login_pic1, Login_pic2, Icon_login },
   props: ["PlayerProfile"],
 
   data() {
@@ -79,6 +80,9 @@ input {
   align-items: center;
 }
 .enter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   width: 48px;
   height: 48px;
@@ -117,5 +121,24 @@ input {
   height: 100%;
 
   background: radial-gradient(closest-side, #013c6c, #032a48);
+}
+@media screen and (min-width: 2047px) {
+}
+@media screen and (min-width: 2559px) {
+  .pic1 {
+    transform: translateX(570px);
+  }
+  .pic2 {
+    transform: translateX(-570px);
+  }
+}
+
+@media screen and (min-width: 3839px) {
+  .pic1 {
+    transform: translateX(1200px);
+  }
+  .pic2 {
+    transform: translateX(-1200px);
+  }
 }
 </style>

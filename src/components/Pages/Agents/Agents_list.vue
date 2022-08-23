@@ -128,8 +128,21 @@ export default {
 }
 @media screen and (max-width: 1401px) {
   .item {
-    grid-template-columns: 241px 240px 324px 144px 140px;
-    width: 1080px;
+    grid-template-columns: 241px 240px 270px 144px 140px;
+    width: 1020px;
+  }
+}
+@media screen and (min-width: 2559px) {
+  .item {
+    width: 78vw;
+    grid-template-columns: 10vw 12vw 42vw 9.4vw 140px;
+  }
+}
+@media screen and (min-width: 3839px) {
+  .item {
+    font-size: 20px;
+    width: 84vw;
+    grid-template-columns: 12.8vw 14vw 44vw 10vw 140px;
   }
 }
 </style>

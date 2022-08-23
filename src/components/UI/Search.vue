@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="wrapper">
     <h1>List of Citizens</h1>
     <div class="search_string">
-      <span
+      <span class="results"
         >Your search results for:
         <span class="search1">"{{ SearchInput }}"</span>
       </span>
@@ -15,7 +15,7 @@
       <span>Phone</span>
       <span>Criminal record</span>
     </div>
-    <div class="list_container">
+    <div class="list_container3">
       <div class="list_item2" v-for="item in SearchResalut">
         <span>{{ item.id }}</span>
         <span>{{ `${item.Fistname} ${item.Lastname}` }}</span>
@@ -78,7 +78,7 @@ export default {
   grid-template-columns: 135px 277px 191px 238px 384px 421px;
 }
 
-.list_container {
+.list_container3 {
   width: 1550px;
   display: flex;
 
@@ -101,7 +101,7 @@ h1 {
   h1 {
     margin-left: 40px;
   }
-  .list_container {
+  .list_container3 {
     width: 1010px;
     display: flex;
     margin-left: 40px;
@@ -117,6 +117,53 @@ h1 {
   }
   .search_string {
     margin-left: 40px;
+  }
+}
+@media screen and (min-width: 2047px) {
+  .list_container3 {
+    width: 89%;
+  }
+  .list_item2 {
+  }
+}
+@media screen and (min-width: 2559px) {
+  .wrapper {
+    width: 100%;
+  }
+  .list_container3 {
+    width: 95%;
+    max-height: 75vh;
+  }
+  .list_item2 {
+    width: 93%;
+    grid-template-columns: 8% 17% 18.4% 30% 20% 160px;
+  }
+  .list {
+    width: 88%;
+    grid-template-columns: 8% 17% 18.4% 30% 17.5% 160px;
+  }
+}
+
+@media screen and (min-width: 3839px) {
+  .wrapper {
+    width: 100%;
+  }
+  .list_container3 {
+    width: 95%;
+    max-height: 75vh;
+  }
+  .list_item2 {
+    width: 93%;
+    grid-template-columns: 8% 17% 18.4% 30% 20% 160px;
+    font-size: 23px;
+  }
+  .list {
+    font-size: 23px;
+    width: 88%;
+    grid-template-columns: 8% 17% 18.4% 30% 17.5% 200px;
+  }
+  .results {
+    font-size: 20px;
   }
 }
 </style>

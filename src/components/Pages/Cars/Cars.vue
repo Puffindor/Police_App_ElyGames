@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="wrapper">
     <h1>Flotte Management</h1>
     <div class="flex">
       <div class="btn_container">
-        <button class="btn">Prendre la voiture</button>
+        <button class="btn" @click="Add">Prendre la voiture</button>
         <span class="bold">Mettre la machine en service</span>
         <span class="light">La voiture apparaîtra dans le garage du LSPD.</span>
       </div>
@@ -63,7 +63,11 @@ export default {
       SearchInput: "",
     };
   },
-  methods: {},
+  methods: {
+    Add() {
+      this.$emit("add_car");
+    },
+  },
   computed: {
     Search() {
       if (this.SearchInput) {
@@ -161,7 +165,8 @@ export default {
   border-radius: 8px;
 }
 .list_container {
-  width: 1412px;
+  /* width: 1412px; */
+  width: 79%;
   display: flex;
   justify-content: flex-start;
   overflow: auto;
@@ -252,4 +257,65 @@ h1 {
   margin-top: 60px;
   margin-left: 114px;
 }
+
+@media screen and (max-width: 1401px) {
+  .list_container {
+    width: 1050px;
+    margin-left: 40px;
+  }
+  .flex {
+    grid-template-columns: 200px 351px;
+    margin-left: 40px;
+  }
+  .list_head {
+    grid-template-columns: 232px 275px 227px 169px 50px;
+    margin-left: 40px;
+  }
+  h1 {
+    margin-left: 40px;
+  }
+  .item {
+    grid-template-columns: 232px 275px 227px 169px 75px 36px;
+  }
+}
+@media screen and (min-width: 2047px) {
+}
+@media screen and (min-width: 2559px) {
+  .list_container {
+    width: 80vw;
+    max-height: 62vh;
+  }
+  .flex {
+    grid-template-columns: 45vw 351px;
+  }
+
+  .item {
+    grid-template-columns: 15vw 15vw 33vw 162px 181px 36px;
+  }
+  .list_head {
+    grid-template-columns: 15vw 15vw 33vw 162px 181px;
+  }
+}
+
+@media screen and (min-width: 3839px) {
+  .list_head {
+    grid-template-columns: 15vw 15vw 33vw 162px 181px;
+    font-size: 22px;
+  }
+  .item {
+    grid-template-columns: 15vw 15vw 33vw 162px 181px 36px;
+    font-size: 22px;
+  }
+  .list_container {
+    width: 75vw;
+    max-height: 72vh;
+  }
+  .flex {
+    grid-template-columns: 51vw 351px;
+  }
+}
+
+/* 2048×1080 2K */
+/* 2560x1440 3K */
+/* 3840 Х 2160 */
 </style>

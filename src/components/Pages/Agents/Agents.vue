@@ -135,11 +135,37 @@ h1 {
   }
   .list {
     margin-left: 40px;
-    grid-template-columns: 241px 240px 324px 183px;
+    grid-template-columns: 241px 240px 270px 144px;
   }
   .list_container {
     margin-left: 40px;
-    width: 1105px;
+    width: 1050px;
   }
 }
+@media screen and (min-width: 2047px) {
+}
+@media screen and (min-width: 2559px) {
+  .list_container {
+    width: 80vw;
+    max-height: 72vh;
+  }
+  .list {
+    grid-template-columns: 10vw 12vw 42vw 9.4vw 140px;
+  }
+}
+
+@media screen and (min-width: 3839px) {
+  .list_container {
+    width: 85vw;
+    max-height: 77vh;
+  }
+  .list {
+    font-size: 20px;
+    grid-template-columns: 12.8vw 14vw 44vw 10vw 140px;
+  }
+}
+
+/* 2048×1080 2K */
+/* 2560x1440 3K */
+/* 3840 Х 2160 */
 </style>

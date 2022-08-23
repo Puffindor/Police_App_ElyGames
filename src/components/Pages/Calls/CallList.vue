@@ -125,4 +125,53 @@ input {
   font-family: "Segoe UI";
   font-weight: 600;
 }
+@media screen and (max-width: 1401px) {
+  .list_container {
+    width: 1000px;
+    margin-left: 40px;
+  }
+  .list {
+    grid-template-columns: 100px 150px 360px 151px;
+    margin-left: 40px;
+  }
+  .listItem {
+    width: 980px;
+    grid-template-columns: 100px 150px 360px 151px 129px 46px 46px;
+  }
+  .search_inp {
+    margin-left: 40px;
+  }
+  h1 {
+    margin-left: 40px;
+  }
+}
+@media screen and (min-width: 2047px) {
+}
+@media screen and (min-width: 2559px) {
+  .list_container {
+    width: 80vw;
+    max-height: 75vh;
+  }
+  .list {
+    grid-template-columns: 10vw 12vw 38.5vw 10vw;
+  }
+  .listItem {
+    width: 79vw;
+    grid-template-columns: 10vw 12vw 38.5vw 10vw 129px 46px 46px;
+  }
+}
+
+@media screen and (min-width: 3839px) {
+  .listItem {
+    font-size: 20px;
+    grid-template-columns: 10vw 12vw 38.5vw 12.5vw 129px 46px 46px;
+  }
+  .list {
+    font-size: 20px;
+  }
+}
+
+/* 2048×1080 2K */
+/* 2560x1440 3K */
+/* 3840 Х 2160 */
 </style>

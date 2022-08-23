@@ -124,6 +124,20 @@ export default {
   background-color: #396aff;
   border-radius: 10px;
 }
+
+.medals_head {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 25px;
+  margin-bottom: 22px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .list_container1 {
   width: 570px;
   max-height: 400px;
@@ -133,14 +147,6 @@ export default {
   flex-wrap: wrap;
 }
 
-.medals_head {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  margin-top: 25px;
-  margin-bottom: 22px;
-  margin-left: 649px;
-}
 .list_item1 {
   justify-items: end;
   font-family: Arial;
@@ -184,6 +190,9 @@ h2 {
 }
 .medals {
   grid-area: medals;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 1392px;
   height: 238px;
   border-radius: 4px;
@@ -319,5 +328,180 @@ h2 {
   margin-left: 114px;
   margin-top: 40px;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1401px) {
+  .case_history {
+    width: 409px;
+  }
+  .list_container1 {
+    width: 409px;
+  }
+  .list_item1 {
+    width: 350px;
+    grid-template-columns: 200px 149px;
+  }
+  .list_head {
+    grid-template-columns: 200px 149px;
+  }
+  h2 {
+    margin-left: 103px;
+  }
+  .left_column {
+    width: 592px;
+  }
+  .name_container {
+    width: 340px;
+  }
+  .rank_container {
+    width: 592px;
+  }
+  .medals {
+    width: 1020px;
+  }
+  .profile {
+    grid-template-columns: 592px 449px;
+    margin-left: 40px;
+  }
+  .head {
+    margin-left: 40px;
+  }
+}
+@media screen and (min-width: 2047px) {
+}
+@media screen and (min-width: 2559px) {
+  .medals {
+    width: 100%;
+  }
+  .profile {
+    grid-template-columns: 56.5vw 585px;
+    grid-template-rows: 31.5vh 31.5vh 15vh;
+    margin-top: 45px;
+  }
+  .head {
+    margin-top: 50px;
+  }
+  .img {
+    width: 360px;
+    height: 360px;
+  }
+  .btn2 {
+    width: 360px;
+  }
+
+  .left_column {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 380px 1fr;
+  }
+  .name_container {
+    width: 95%;
+    align-self: center;
+  }
+  .info_container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .rank_container {
+    width: 100%;
+    height: 100%;
+  }
+  .case_history {
+    height: 100%;
+  }
+  .list_container1 {
+    max-height: 82%;
+  }
+}
+
+@media screen and (min-width: 3839px) {
+  .profile {
+    grid-template-columns: 56.5vw 25vw;
+    grid-template-rows: 31.5vh 31.5vh 18vh;
+  }
+  .medals {
+    width: 100%;
+  }
+
+  .head {
+    margin-top: 50px;
+  }
+  .img {
+    width: 100%;
+    height: 85%;
+  }
+  .btn2 {
+    width: 100%;
+  }
+  .btn2:hover {
+    cursor: pointer;
+    margin-top: 14px;
+    margin-left: 25px;
+    color: white;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+    height: 36px;
+    border-radius: 4px;
+    border-style: hidden;
+    background-color: v-bind(btn_color_hover);
+  }
+  .name {
+    font-size: 40px;
+  }
+  .rank {
+    font-size: 30px;
+  }
+  .left_column {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 587px 1fr;
+    column-gap: 50px;
+  }
+  .name_container {
+    width: 95%;
+    grid-template-columns: 500px 1fr;
+    align-self: center;
+    align-self: flex-start;
+    grid-template-rows: 80px 80px;
+  }
+  .info_container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .b {
+    font-size: 30px;
+  }
+  .h {
+    font-size: 30px;
+  }
+  .rank_container {
+    width: 100%;
+    height: 100%;
+  }
+  .case_history {
+    height: 100%;
+    width: 100%;
+  }
+  .list_container1 {
+    max-height: 85%;
+    width: 95%;
+  }
+  h2 {
+    margin-left: 350px;
+  }
+  .list_item1 {
+    width: 90%;
+    grid-template-columns: repeat(2, 50%);
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 20px;
+  }
+  .list_head {
+    width: 100%;
+    grid-template-columns: 68% 20%;
+    margin-left: 80px;
+    font-size: 20px;
+  }
 }
 </style>

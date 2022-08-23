@@ -1,5 +1,5 @@
 <template>
-  <span>{{ Log() }}</span>
+  <span>{{ (Size(), Log()) }}</span>
   <div class="container2">
     <button class="btn btn_right" @click="Backward"><Chevron_right /></button>
     <div class="medal_item" v-for="medal in Forward" :key="medal.id">
@@ -21,43 +21,73 @@ export default {
     return {
       first: 0,
       last: 8,
+      emptyCels: 10,
       List: [],
+      scroll: 8,
+      count: 0,
+      adapt: false,
     };
   },
   methods: {
     Forward1() {
       if (this.last < this.Medals.length) {
-        this.last = this.last + 8;
-        this.first = this.first + 8;
+        this.count += 1;
+        this.last = this.last + this.scroll;
+        this.first = this.first + this.scroll;
         if (this.Medals.length < this.last) {
           for (let i = 0; i < this.last - this.Medals.length; i++) {
             this.Forward.push({ img: "" });
-            console.log(this.Medals.length);
           }
         }
       }
     },
     Backward() {
-      if (this.last > this.Medals.length) {
-        this.last = this.last - 8;
-        this.first = this.first - 8;
+      if (this.count > 0) {
+        this.count -= 1;
+        this.last = this.last - this.scroll;
+        this.first = this.first - this.scroll;
         if (this.Medals.length < this.last) {
           for (let i = 0; i < this.last - this.Medals.length; i++) {
             this.Forward.push({ img: "" });
-            console.log(this.Medals.length);
           }
         }
       }
     },
     Log() {
-      if (this.Medals.length < 8) {
+      if (this.Medals.length < this.emptyCels) {
         this.List = this.Medals;
-        for (let i = 0; i < 8 - this.Medals.length; i++) {
-          this.List.push({ img: "" });
+        for (let i = 0; i < this.emptyCels - this.Medals.length; i++) {
+          this.List.push({ id: Math.random(), img: "" });
         }
       } else {
         for (let i = 0; i < 8; i++) {
-          this.List = this.Medals.slice(0, 8);
+          this.List = this.Medals.slice(0, this.emptyCels);
+        }
+      }
+    },
+
+    Size() {
+      if (this.adapt === false) {
+        switch (window.screen.width) {
+          case 1400:
+            this.last = 6;
+            this.adapt = true;
+            break;
+          case 2560:
+            this.last = 12;
+            this.adapt = true;
+            this.emptyCels = 12;
+            break;
+          case 3840:
+            this.last = 17;
+            this.adapt = true;
+            this.emptyCels = 17;
+            console.log(window.screen.width);
+            break;
+          default:
+            this.last = 8;
+            this.adapt = true;
+            break;
         }
       }
     },
@@ -98,9 +128,9 @@ img {
   justify-content: space-between;
   align-items: center;
   overflow-x: auto;
-  width: 1356px;
+  /* width: 1356px; */
+  width: 98%;
 
-  margin-left: 18px;
   margin-bottom: 21px;
 }
 .medal_item {
@@ -111,5 +141,12 @@ img {
   height: 139px;
   border-radius: 4px;
   background-color: #f5f7fb;
+}
+@media screen and (max-width: 1401px) {
+  .container2 {
+    width: 980px;
+  }
+  @media screen and (min-width: 2559px) {
+  }
 }
 </style>
