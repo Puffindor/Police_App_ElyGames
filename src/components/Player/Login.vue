@@ -1,8 +1,8 @@
 <template>
+  <span>{{ login_pics() }}</span>
   <div class="login">
-    <div class="pic2">
-      <login_pic2 />
-    </div>
+    <img :src="this.pic1" class="pic1" />
+
     <div class="wrapper">
       <img src="@/Assets/logo_login.png" />
       <div class="login_container">
@@ -13,23 +13,22 @@
         <button @click="Login" class="enter"><Icon_login /></button>
       </div>
     </div>
-    <div class="pic1">
-      <login_pic1 />
-    </div>
+
+    <img :src="this.pic2" class="pic2" />
   </div>
 </template>
 
 <script>
-import Login_pic1 from "@/Assets/login_pic1.vue";
-import Login_pic2 from "@/Assets/login_pic2.vue";
 import Icon_login from "@/Assets/icons/Icon_login.vue";
 export default {
   emits: ["cl"],
-  components: { Login_pic1, Login_pic2, Icon_login },
+  components: { Icon_login },
   props: ["PlayerProfile"],
 
   data() {
     return {
+      pic1: "",
+      pic2: "",
       login: "",
       password: "",
     };
@@ -46,7 +45,20 @@ export default {
         this.password = "";
       }
     },
+    login_pics() {
+      switch (window.screen.width) {
+        case 1400:
+          this.pic1 = require("@/Assets/login_pic1_small.png");
+          this.pic2 = require("@/Assets/login_pic2_small.png");
+          break;
+        default:
+          this.pic1 = require("@/Assets/logo_login_left.png");
+          this.pic2 = require("@/Assets/logo_login_right.png");
+          break;
+      }
+    },
   },
+  computed: {},
 };
 </script>
 
@@ -58,10 +70,10 @@ export default {
 }
 
 .pic1 {
-  transform: translateX(390px);
+  transform: translateX(-390px);
 }
 .pic2 {
-  transform: translateX(-390px);
+  transform: translateX(390px);
 }
 
 input {
@@ -122,23 +134,31 @@ input {
 
   background: radial-gradient(closest-side, #013c6c, #032a48);
 }
+@media screen and (max-width: 1401px) {
+  .pic1 {
+    transform: translateX(-50px);
+  }
+  .pic2 {
+    transform: translateX(50px);
+  }
+}
 @media screen and (min-width: 2047px) {
 }
 @media screen and (min-width: 2559px) {
   .pic1 {
-    transform: translateX(570px);
+    transform: translateX(-590px);
   }
   .pic2 {
-    transform: translateX(-570px);
+    transform: translateX(590px);
   }
 }
 
 @media screen and (min-width: 3839px) {
   .pic1 {
-    transform: translateX(1200px);
+    transform: translateX(-1200px);
   }
   .pic2 {
-    transform: translateX(-1200px);
+    transform: translateX(1200px);
   }
 }
 </style>

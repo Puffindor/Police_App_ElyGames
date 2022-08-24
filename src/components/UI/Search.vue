@@ -123,8 +123,8 @@ h1 {
   .list_container3 {
     width: 89%;
   }
-  .list_item2 {
-  }
+  /* .list_item2 {
+  } */
 }
 @media screen and (min-width: 2559px) {
   .wrapper {

@@ -61,16 +61,16 @@
         <span class="print_item ring">4.RING FINGER</span>
         <span class="print_item little">5.LITTLE FINGER</span>
         <div class="print_item finger1">
-          <Finger1 />
+          <img src="@/Assets/finger/finger5.png" style="margin: 0" />
         </div>
         <div class="print_item finger2">
-          <Finger1 />
+          <img src="@/Assets/finger/finger6.png" style="margin: 0" />
         </div>
         <div class="print_item finger3">
-          <Finger1 />
+          <img src="@/Assets/finger/finger7.png" style="margin: 0" />
         </div>
         <div class="print_item finger4">
-          <Finger1 />
+          <img src="@/Assets/finger/finger8.png" style="margin: 0" />
         </div>
         <div class="print_item finger5">
           <Finger1 />
@@ -86,16 +86,16 @@
           <Finger1 />
         </div>
         <div class="print_item finger2">
-          <Finger1 />
+          <img src="@/Assets/finger/finger2.png" style="margin: 0" />
         </div>
         <div class="print_item finger3">
-          <Finger1 />
+          <img src="@/Assets/finger/finger3.png" style="margin: 0" />
         </div>
         <div class="print_item finger4">
-          <Finger1 />
+          <img src="@/Assets/finger/finger4.png" style="margin: 0" />
         </div>
         <div class="print_item finger5">
-          <Finger1 />
+          <img src="@/Assets/finger/finger5.png" style="margin: 0" />
         </div>
       </div>
 
@@ -155,9 +155,9 @@ export default {
 }
 
 .prof {
-  height: 935px;
+  height: 88vh;
 
-  overflow: scroll;
+  overflow: auto;
 }
 .bold {
   font-family: Arial;
@@ -302,7 +302,7 @@ textarea {
   border-bottom: 1px solid#454545;
   display: grid;
   grid-template-rows: 90px;
-  grid-template-columns: 183px 280px 307px 400px 400px;
+  grid-template-columns: 183px 280px 307px 400px 8vw;
   margin-top: 20px;
   margin-left: 120px;
   align-items: center;
@@ -371,6 +371,11 @@ img {
 }
 
 @media screen and (max-width: 1401px) {
+  .prof {
+    height: 88vh;
+    width: 78.6vw;
+    overflow: auto;
+  }
   .list2_container {
     width: 1020px;
   }
@@ -464,13 +469,20 @@ img {
   .finger5 {
     order: 8;
   }
+  .list {
+    column-gap: 90px;
+  }
 }
 @media screen and (min-width: 2047px) {
+  .list2_head {
+    grid-template-columns: 183px 280px 307px 400px 10vw;
+  }
 }
 @media screen and (min-width: 2559px) {
   .prof {
-    height: 95vh;
+    height: 90vh;
     overflow: scroll;
+    width: 88vw;
   }
   .list2_container {
     width: 80vw;
@@ -478,7 +490,7 @@ img {
   }
   .list2_head {
     width: 79vw;
-    grid-template-columns: 15vw 15vw 20vw 20vw 20vw;
+    grid-template-columns: 15vw 15vw 20vw 20vw 10vw;
     margin-left: 110px;
   }
   .list2 {
@@ -492,7 +504,8 @@ img {
     margin-left: 0;
   }
   .a {
-    column-gap: 615px;
+    column-gap: 33%;
+    grid-template-columns: 760px 26.5%;
   }
   .other_info {
     width: 45vw;
@@ -505,6 +518,7 @@ img {
 @media screen and (min-width: 3839px) {
   .list2_head {
     font-size: 27px;
+    grid-template-columns: 15vw 15vw 20vw 20vw 10vw;
   }
   .list2 {
     grid-template-columns: 18vw 12vw 20vw 16.9vw 10vw;
@@ -537,6 +551,7 @@ img {
     margin-left: 1720px;
   }
   .a {
+    column-gap: 19%;
     grid-template-columns: 760px 1670px;
   }
   .plate {

@@ -33,7 +33,7 @@ import Lieutenant_2 from "@/Assets/straps/Lieutenant_2.vue";
 export default {
   emits: ["rank"],
   components: { Lieutenant_1, Lieutenant_2 },
-  props: ["exp", "ranks"],
+  props: ["exp", "ranks", "agent"],
   data() {
     return {
       NextRanks: [],
@@ -85,14 +85,20 @@ export default {
     },
     XPtoNext() {
       if (this.NextRanks.length > 0) {
-        if (this.exp <= this.ranks[this.ranks.length - 1].exp) {
+        if (this.agent === true) {
+          this.$emit(
+            "agent_rank",
+            this.possibleRanks[this.possibleRanks.length - 1].name
+          );
+          console.log(this.possibleRanks[this.possibleRanks.length - 1].name);
+        } else {
+          console.log(this.possibleRanks[this.possibleRanks.length - 1].name);
           this.$emit(
             "rank",
             this.possibleRanks[this.possibleRanks.length - 1].name
           );
-        } else {
-          this.$emit("rank", "Max Rank");
         }
+
         return this.NextRanks[0].exp - this.exp;
       }
     },

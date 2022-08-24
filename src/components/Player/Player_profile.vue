@@ -16,7 +16,12 @@
         </div>
       </div>
       <div class="rank_container">
-        <Rank :exp="this.PlayerProfile.exp" :ranks="this.ranks" @rank="rank" />
+        <Rank
+          :exp="this.PlayerProfile.exp"
+          :ranks="this.ranks"
+          @rank="rank"
+          :agent="false"
+        />
       </div>
       <div class="medals">
         <div class="medals_head">Medals</div>

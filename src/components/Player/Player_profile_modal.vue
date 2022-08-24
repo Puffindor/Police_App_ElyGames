@@ -58,6 +58,7 @@
           </div>
         </div>
       </div>
+      <button @click="Save" class="btn_save">Save</button>
     </div>
   </div>
 </template>
@@ -82,6 +83,9 @@ export default {
     };
   },
   methods: {
+    Save() {
+      this.$emit("close");
+    },
     Show() {
       this.$emit("close");
     },
@@ -122,6 +126,24 @@ export default {
   font-weight: 700;
   color: #9da8be;
   margin-bottom: 10px;
+}
+.btn_save {
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  margin-top: 45px;
+  margin-bottom: 54px;
+  margin-left: 900px;
+  font-size: 16px;
+  font-weight: 700;
+  border-style: hidden;
+  width: 99px;
+  height: 36px;
+  background-color: #396aff;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .link_3 {
   font-family: "Segoe UI";
@@ -231,5 +253,55 @@ input {
   height: 621px;
   border-radius: 10px;
   background-color: white;
+}
+@media screen and (min-width: 3839px) {
+  .popup_inner {
+    width: 1668px;
+    height: 1069px;
+    border-radius: 10px;
+  }
+  .img {
+    width: 500px;
+    height: 500px;
+  }
+  .wrapper {
+    grid-template-columns: 500px 1fr;
+  }
+  .table {
+    display: grid;
+    grid-template-columns: repeat(2, 460px);
+    grid-template-rows: repeat(3, 80px);
+    column-gap: 50px;
+    row-gap: 110px;
+  }
+  .form_item {
+    width: 100%;
+    height: 100%;
+    font-size: 23px;
+  }
+  .form_item_string {
+    font-size: 23px;
+  }
+  .link_1 {
+    width: 100%;
+    height: 10%;
+  }
+  input {
+    font-size: 23px;
+  }
+  .link_2 {
+    height: 100%;
+  }
+  .link_3 {
+    font-size: 23px;
+  }
+  .btn_container2 {
+    grid-template-columns: 96.5% 1fr;
+  }
+  .btn_save {
+    margin-top: 285px;
+    margin-bottom: 54px;
+    margin-left: 1500px;
+  }
 }
 </style>

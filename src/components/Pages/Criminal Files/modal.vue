@@ -99,11 +99,6 @@
             v-bind:value="this.PopupProfile.otherInfo"
             @input="this.otherInfo = $event.target.value"
           ></textarea>
-          <!-- <input
-            class="other_info_input"
-            v-bind:value="this.PopupProfile.otherInfo"
-            @input="this.otherInfo = $event.target.value"
-          /> -->
         </div>
       </div>
       <button @click="Save" class="btn_save">Save</button>
@@ -413,22 +408,70 @@ h1 {
   .Height {
     order: 7;
   }
-  @media screen and (min-width: 2047px) {
-  }
-  @media screen and (min-width: 2559px) {
-  }
-
-  @media screen and (min-width: 3839px) {
-    .popup_inner {
-      width: 3000px;
-      height: 769px;
-      background-color: red;
-      border-radius: 10px;
-    }
-  }
-
-  /* 2048×1080 2K */
-  /* 2560x1440 3K */
-  /* 3840 Х 2160 */
 }
+@media screen and (min-width: 2047px) {
+}
+@media screen and (min-width: 2559px) {
+}
+
+@media screen and (min-width: 3839px) {
+  .popup_inner {
+    width: 1668px;
+    height: 1069px;
+    border-radius: 10px;
+  }
+  .table {
+    grid-template-columns: repeat(3, 320px);
+
+    grid-template-rows: repeat(3, 72px);
+    row-gap: 85px;
+  }
+  .form_item {
+    width: 100%;
+    height: 90%;
+    font-size: 22px;
+  }
+  .form_item_string {
+    font-size: 22px;
+  }
+  input {
+    font-size: 22px;
+  }
+  .link_1 {
+    width: 100%;
+  }
+  .link_3 {
+    font-size: 20px;
+  }
+  .other_info_container {
+    margin-left: 540px;
+  }
+  .other_info {
+    width: 1060px;
+    height: 345px;
+  }
+  .btn_save {
+    margin-left: 1500px;
+  }
+  .other_info_input {
+    font-size: 22px;
+  }
+  .btn {
+    margin-left: 1620px;
+  }
+  .img {
+    width: 400px;
+    height: 400px;
+  }
+  .left_column {
+    margin: 0;
+  }
+  .popup_inner2 {
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+/* 2048×1080 2K */
+/* 2560x1440 3K */
+/* 3840 Х 2160 */
 </style>

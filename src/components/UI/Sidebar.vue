@@ -121,6 +121,9 @@ span {
 }
 
 .logout {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
   margin-left: 42px;
   margin-top: 450px;
 }

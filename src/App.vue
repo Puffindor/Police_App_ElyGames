@@ -13,7 +13,7 @@
         :PlayerProfile="PlayerProfile"
       />
     </div>
-
+    <span>{{ RankAgent }}</span>
     <Sidebar @cl="switchPage" :currentPageID="currentPageID" />
 
     <div class="content">
@@ -28,6 +28,7 @@
         @deleteCall="deleteCall"
         @rank="ranks"
         @add_car="AddCar"
+        @agent_rank="AgentRank"
         :ranks="this.Ranks"
         :agent_profile="this.AgentsList[index_agent]"
         :CriminalList="this.CriminalList"
@@ -89,10 +90,13 @@ export default {
   },
   data() {
     return {
+      Rank_agent: "",
+      possibleRanks: [],
+
       CarAdded: false,
       Login: true,
       index_agent: 0,
-      name: "Player_profile",
+      name: "Home",
       index: 1,
       currentPageID: 1,
       SearchResalut: [],
@@ -276,7 +280,7 @@ export default {
       ],
       CriminalList: [
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -291,7 +295,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -306,7 +310,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -321,7 +325,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -336,7 +340,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -351,7 +355,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -366,7 +370,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -381,7 +385,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -396,7 +400,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -411,7 +415,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -426,7 +430,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -441,7 +445,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -456,7 +460,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -471,7 +475,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -486,7 +490,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -501,7 +505,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -516,7 +520,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -531,7 +535,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -546,7 +550,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -561,7 +565,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -576,7 +580,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -591,7 +595,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -606,7 +610,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -621,7 +625,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -636,7 +640,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -651,7 +655,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -666,7 +670,7 @@ export default {
           history: [],
         },
         {
-          id: 112,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "Billy",
           Lastname: "Williams",
           sex: "male",
@@ -681,7 +685,7 @@ export default {
           history: [],
         },
         {
-          id: 11,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "James",
           Lastname: "Williams",
           sex: "male",
@@ -696,7 +700,7 @@ export default {
           history: [],
         },
         {
-          id: 22,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "James",
           Lastname: "Williams",
           sex: "male",
@@ -713,7 +717,7 @@ export default {
         {
           avatar:
             "https://thumbs.dreamstime.com/b/смешной-преступник-с-оружием-42839377.jpg",
-          id: 241,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "James",
           Lastname: "Williams",
           sex: "male",
@@ -729,7 +733,7 @@ export default {
         },
         {
           avatar: "",
-          id: 281,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "James",
           Lastname: "Williams",
           sex: "male",
@@ -745,7 +749,7 @@ export default {
         },
         {
           avatar: "",
-          id: 271,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "James",
           Lastname: "Williams",
           sex: "male",
@@ -761,7 +765,7 @@ export default {
         },
         {
           avatar: "",
-          id: 270,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "James",
           Lastname: "Williams",
           sex: "male",
@@ -777,7 +781,7 @@ export default {
         },
         {
           avatar: "",
-          id: 274,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "James",
           Lastname: "Williams",
           sex: "male",
@@ -793,7 +797,7 @@ export default {
         },
         {
           avatar: "",
-          id: 276,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "James",
           Lastname: "Williams",
           sex: "male",
@@ -830,7 +834,7 @@ export default {
           ],
         },
         {
-          id: 222,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           Fistname: "jsosh",
           Lastname: "Williams",
           sex: "male",
@@ -926,11 +930,12 @@ export default {
       ],
       AgentsList: [
         {
+          exp: 300,
           avatar:
             "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           name: "Jhon Wiliams",
-          rank: "Lieutenant I",
+          rank: "",
           status: "On duty",
           distance: "2.5Km",
           birthday: "21.01.2002",
@@ -1090,11 +1095,12 @@ export default {
           ],
         },
         {
+          exp: 50,
           avatar:
             "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
           name: "Jhon Wiliams",
-          rank: "Lieutenant I",
+          rank: "",
           status: "On duty",
           distance: "2.5Km",
           birthday: "21.01.2002",
@@ -1106,1120 +1112,65 @@ export default {
               status: "Complited",
             },
             {
-              name: "Murder",
-              status: "In  progress",
+              name: "Robbery in city",
+              status: "Complited",
             },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
             {
               name: "Robbery in city",
               status: "Complited",
             },
             {
-              name: "Murder",
-              status: "In  progress",
+              name: "Robbery in city",
+              status: "Complited",
             },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
             {
               name: "Robbery in city",
               status: "Complited",
             },
             {
-              name: "Murder",
-              status: "In  progress",
+              name: "Robbery in city",
+              status: "Complited",
             },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
             {
               name: "Robbery in city",
               status: "Complited",
             },
             {
-              name: "Murder",
-              status: "In  progress",
+              name: "Robbery in city",
+              status: "Complited",
             },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
             {
               name: "Robbery in city",
               status: "Complited",
             },
             {
-              name: "Murder",
-              status: "In  progress",
+              name: "Robbery in city",
+              status: "Complited",
             },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
             {
               name: "Robbery in city",
               status: "Complited",
             },
             {
-              name: "Murder",
-              status: "In  progress",
+              name: "Robbery in city",
+              status: "Complited",
             },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
             {
               name: "Robbery in city",
               status: "Complited",
             },
             {
-              name: "Murder",
-              status: "In  progress",
+              name: "Robbery in city",
+              status: "Complited",
             },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
             {
               name: "Robbery in city",
               status: "Complited",
             },
             {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
               name: "Robbery in city",
               status: "Complited",
             },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar:
-            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
-          id: 228,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "On duty",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar: "",
-          id: 220,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "AFK",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar: "",
-          id: 224,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "Do not disturb",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
-            {
-              name: "Robbery in city",
-              status: "Complited",
-            },
-            {
-              name: "Murder",
-              status: "In  progress",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-            {
-              name: "Shooting in city",
-              status: "Abandonned",
-            },
-          ],
-          medals: [],
-        },
-        {
-          avatar: "",
-          id: 221,
-          name: "Jhon Wiliams",
-          rank: "Lieutenant I",
-          status: "Need a parthner",
-          distance: "2.5Km",
-          birthday: "21.01.2002",
-          phone: "666-1234",
-          invited: false,
-          history: [
             {
               name: "Robbery in city",
               status: "Complited",
@@ -2264,11 +1215,212 @@ export default {
             },
             {
               id: Math.random(),
-              img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
             },
             {
               id: Math.random(),
-              img: "https://thumbs.dreamstime.com/b/large-gold-first-prize-medal-ribbon-large-gold-first-prize-medal-ribbon-100198161.jpg",
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+          ],
+        },
+        {
+          exp: 0,
+          avatar:
+            "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
+          id: Math.floor(Math.random() * (999 - 1)) + 1,
+          name: "Jhon Wiliams",
+          rank: "",
+          status: "On duty",
+          distance: "2.5Km",
+          birthday: "21.01.2002",
+          phone: "666-1234",
+          invited: false,
+          history: [
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Robbery in city",
+              status: "Complited",
+            },
+            {
+              name: "Murder",
+              status: "In  progress",
+            },
+            {
+              name: "Shooting in city",
+              status: "Abandonned",
+            },
+            {
+              name: "Shooting in city",
+              status: "Abandonned",
+            },
+            {
+              name: "Shooting in city",
+              status: "Abandonned",
+            },
+            {
+              name: "Shooting in city",
+              status: "Abandonned",
+            },
+            {
+              name: "Shooting in city",
+              status: "Abandonned",
+            },
+            {
+              name: "Shooting in city",
+              status: "Abandonned",
+            },
+            {
+              name: "Shooting in city",
+              status: "Abandonned",
+            },
+          ],
+          medals: [
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
+            },
+            {
+              id: Math.random(),
+              img: "https://image.shutterstock.com/image-vector/champion-art-golden-medal-red-260nw-685238779.jpg",
             },
           ],
         },
@@ -2521,7 +1673,7 @@ export default {
         avatar:
           "https://cs.pikabu.ru/post_img/2013/04/03/1/1364939641_2143669487.jpg",
         id: 0,
-        exp: 99,
+        exp: 339,
         name: "Jhon Wiliams",
         Firstname: "Jhon",
         Lastname: "Wiliams",
@@ -2715,7 +1867,7 @@ export default {
       },
 
       Ranks: [
-        { name: "Private", exp: 0, strap: "Lieutenant_2" },
+        { name: "Private", exp: 0, strap: "Lieutenant_2" }, //Ranks must be placed in ascending order, from lowest to highest
         {
           name: "Lieutenant I",
           exp: 50,
@@ -2748,7 +1900,13 @@ export default {
       }
       this.CarAdded = true;
     },
-
+    AgentRank(rank, id) {
+      this.AgentsList.forEach((el) => {
+        if (el.id === id) {
+          el.rank = rank;
+        }
+      });
+    },
     ranks(rank) {
       this.PlayerProfile.rank = rank;
     },
@@ -2792,7 +1950,6 @@ export default {
     },
 
     switchPage(pageID) {
-      console.log(pageID);
       this.currentPageID = pageID;
       switch (pageID) {
         case 1:
@@ -2845,6 +2002,15 @@ export default {
     },
     UploadPlayer(link) {
       this.PlayerProfile.avatar = link;
+    },
+  },
+  computed: {
+    RankAgent() {
+      this.AgentsList.forEach((agent) => {
+        this.possibleRanks = this.Ranks.filter((el) => el.exp <= agent.exp);
+        return (agent.rank =
+          this.possibleRanks[this.possibleRanks.length - 1].name);
+      });
     },
   },
 };

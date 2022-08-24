@@ -16,7 +16,14 @@
           </div>
         </div>
       </div>
-      <div class="rank_container"></div>
+      <div class="rank_container">
+        <Rank
+          :exp="this.agent_profile.exp"
+          :ranks="this.ranks"
+          @agent_rank="Rank"
+          :agent="true"
+        />
+      </div>
       <div class="medals">
         <div class="medals_head">Medals</div>
         <Medals_list :Medals="this.agent_profile.medals" />
@@ -54,9 +61,10 @@
 <script>
 import Medals_list from "@/components/Player/Medals_list.vue";
 import Agent_profile_list from "./Agent_profile_list.vue";
+import Rank from "@/components/Player/Rank.vue";
 export default {
   emits: ["invited"],
-  props: ["agent_profile"],
+  props: ["agent_profile", "ranks"],
   data() {
     return {
       color: "#396aff",
@@ -68,6 +76,10 @@ export default {
     };
   },
   methods: {
+    Rank(rank) {
+      this.$emit("agent_rank", rank, this.agent_profile.id);
+    },
+
     Invite1() {
       this.$emit("invited", this.agent_profile.id);
     },
@@ -106,7 +118,7 @@ export default {
     },
   },
 
-  components: { Medals_list, Agent_profile_list },
+  components: { Medals_list, Agent_profile_list, Rank },
 };
 </script>
 
