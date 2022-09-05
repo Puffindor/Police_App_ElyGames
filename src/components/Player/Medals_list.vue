@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Chevron_left from "@/Assets/icons/chevron_left.vue";
-import Chevron_right from "@/Assets/icons/chevron_right.vue";
+import Chevron_left from "../../Assets/icons/chevron_left.vue";
+import Chevron_right from "../../Assets/icons/chevron_right.vue";
 export default {
   props: ["Medals"],
   data() {

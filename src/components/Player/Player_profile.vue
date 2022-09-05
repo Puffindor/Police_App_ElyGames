@@ -79,7 +79,7 @@ export default {
       btn_color_hover: "#7899FF",
       invite: "Invite",
       avatar: "",
-      base_avatar: "./icons/base_avatar.png",
+      base_avatar: "../../icons/base_avatar.png",
       ShowModal: false,
     };
   },
@@ -115,7 +115,7 @@ export default {
       if (this.PlayerProfile.avatar) {
         return (this.avatar = this.PlayerProfile.avatar);
       } else {
-        return (this.avatar = require("@/Assets/icons/base_avatar.png"));
+        return (this.avatar = require("../../Assets/icons/base_avatar.png"));
       }
     },
   },

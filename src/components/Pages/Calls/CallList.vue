@@ -22,7 +22,7 @@
 
 <script>
 import CallList_list from "./CallList_list.vue";
-import Icon_search_small from "@/Assets/icons/Icon_search_small.vue";
+import Icon_search_small from "../../../Assets/icons/Icon_search_small.vue";
 
 export default {
   emits: ["deleteCall"],

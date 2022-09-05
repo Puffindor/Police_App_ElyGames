@@ -107,9 +107,9 @@
 </template>
 
 <script>
-import Icon_red_cross from "@/Assets/icons/Icon_red_cross.vue";
-import Icon_lock from "@/Assets/icons/Icon_lock.vue";
-import Icon_upload from "@/Assets/icons/Icon_upload.vue";
+import Icon_red_cross from "../../../Assets/icons/Icon_red_cross.vue";
+import Icon_lock from "../../../Assets/icons/Icon_lock.vue";
+import Icon_upload from "../../../Assets/icons/Icon_upload.vue";
 
 export default {
   emits: ["upload", "close"],
@@ -154,7 +154,7 @@ export default {
       if (this.PopupProfile.avatar) {
         return (this.avatar = this.PopupProfile.avatar);
       } else {
-        return (this.avatar = require("@/Assets/icons/base_avatar.png"));
+        return (this.avatar = require("../../../Assets/icons/base_avatar.png"));
       }
     },
   },

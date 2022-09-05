@@ -88,10 +88,10 @@
 
 <script>
 import Home_list from "./Home_list.vue";
-import Icon_red_cross from "@/Assets/icons/Icon_red_cross.vue";
-import Icon_triangle from "@/Assets/icons/Icon_triangle.vue";
-import Icon_cross from "@/Assets/icons/Icon_cross.vue";
-import Icon_location from "@/Assets/icons/Icon_location.vue";
+import Icon_red_cross from "../../../Assets/icons/Icon_red_cross.vue";
+import Icon_triangle from "../../../Assets/icons/Icon_triangle.vue";
+import Icon_cross from "../../../Assets/icons/Icon_cross.vue";
+import Icon_location from "../../../Assets/icons/Icon_location.vue";
 export default {
   components: {
     Icon_location,

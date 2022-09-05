@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Icon_cross from "@/Assets/icons/Icon_cross.vue";
-import Icon_location from "@/Assets/icons/Icon_location.vue";
+import Icon_cross from "../../../Assets/icons/Icon_cross.vue";
+import Icon_location from "../../../Assets/icons/Icon_location.vue";
 
 export default {
   emits: ["delete"],

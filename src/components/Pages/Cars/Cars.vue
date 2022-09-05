@@ -46,8 +46,8 @@
 </template>
 
 <script>
-import Icon_search_small from "@/Assets/icons/Icon_search_small.vue";
-import Icon_location from "@/Assets/icons/Icon_location.vue";
+import Icon_search_small from "../../../Assets/icons/Icon_search_small.vue";
+import Icon_location from "../../../Assets/icons/Icon_location.vue";
 
 export default {
   components: {

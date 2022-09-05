@@ -55,9 +55,9 @@
 </template>
 
 <script>
-import Icon_seacrh from "@/Assets/icons/Icon_seacrh.vue";
-import Icon_profile from "@/Assets/icons/Icon_profile.vue";
-import Logo_header from "@/Assets/icons/Logo_header.vue";
+import Icon_seacrh from "../../Assets/icons/Icon_seacrh.vue";
+import Icon_profile from "../../Assets/icons/Icon_profile.vue";
+import Logo_header from "../../Assets/icons/Logo_header.vue";
 export default {
   emits: ["cl", "status", "search"],
   props: ["PlayerProfile"],
@@ -113,7 +113,7 @@ export default {
       if (this.PlayerProfile.avatar) {
         return (this.avatar = this.PlayerProfile.avatar);
       } else {
-        return (this.avatar = require("@/Assets/icons/base_avatar.png"));
+        return (this.avatar = require("../../Assets/icons/base_avatar.png"));
       }
     },
     Color() {

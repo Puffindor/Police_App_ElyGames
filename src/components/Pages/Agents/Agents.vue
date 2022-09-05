@@ -31,8 +31,8 @@
 
 <script>
 import Agents_list from "./Agents_list.vue";
-import Icon_search_small from "@/Assets/icons/Icon_search_small.vue";
-import Icon_triangle from "@/Assets/icons/Icon_triangle.vue";
+import Icon_search_small from "../../../Assets/icons/Icon_search_small.vue";
+import Icon_triangle from "../../../Assets/icons/Icon_triangle.vue";
 export default {
   emits: ["AgentID", "cl", "invited"],
   components: {

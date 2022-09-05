@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Icon_edite from "@/Assets/icons/Icon_edite.vue";
+import Icon_edite from "../../../Assets/icons/Icon_edite.vue";
 
 export default {
   emits: ["close", "ItemID"],

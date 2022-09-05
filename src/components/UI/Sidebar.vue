@@ -37,12 +37,12 @@
 </template>
 
 <script>
-import Icon_agents from "@/Assets/icons/Icon_agents.vue";
-import Icon_stuff from "@/Assets/icons/Icon_stuff.vue";
-import Icon_car from "@/Assets/icons/Icon_car.vue";
-import Icone_home from "@/Assets/icons/Icone_home.vue";
-import Icone_files from "@/Assets/icons/Icone_files.vue";
-import Icon_list from "@/Assets/icons/Icon_list.vue";
+import Icon_agents from "../../Assets/icons/Icon_agents.vue";
+import Icon_stuff from "../../Assets/icons/Icon_stuff.vue";
+import Icon_car from "../../Assets/icons/Icon_car.vue";
+import Icone_home from "../../Assets/icons/Icone_home.vue";
+import Icone_files from "../../Assets/icons/Icone_files.vue";
+import Icon_list from "../../Assets/icons/Icon_list.vue";
 import Icon_logout from "../../Assets/icons/Icon_logout.vue";
 
 export default {

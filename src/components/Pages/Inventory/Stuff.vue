@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { def } from "@vue/shared";
+
 import Inventory_cell from "./Inventory_cell.vue";
 import Inventory_history from "./Inventory_history.vue";
 export default {
@@ -51,7 +51,7 @@ export default {
       this.List[this.List.findIndex((el) => el.amount === "")].amount = 100;
       this.List[
         this.List.findIndex((el) => el.img === "")
-      ].img = require("@//Assets/Stick.png");
+      ].img = require("../../../Assets/Stick.png");
       if (this.List.findIndex((el) => el.amount === "") === -1) {
         for (let i = 0; i < this.ScreenSize2; i++) {
           this.List.push({ amount: "", img: "" });

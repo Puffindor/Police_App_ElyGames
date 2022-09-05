@@ -59,9 +59,9 @@
 </template>
 
 <script>
-import Medals_list from "@/components/Player/Medals_list.vue";
+import Medals_list from "../../../components/Player/Medals_list.vue";
 import Agent_profile_list from "./Agent_profile_list.vue";
-import Rank from "@/components/Player/Rank.vue";
+import Rank from "../../../components/Player/Rank.vue";
 export default {
   emits: ["invited"],
   props: ["agent_profile", "ranks"],
@@ -113,7 +113,7 @@ export default {
       if (this.agent_profile.avatar) {
         return (this.avatar = this.agent_profile.avatar);
       } else {
-        return (this.avatar = require("@/Assets/icons/base_avatar.png"));
+        return (this.avatar = require("../../../Assets/icons/base_avatar.png"));
       }
     },
   },

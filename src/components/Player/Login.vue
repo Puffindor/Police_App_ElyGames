@@ -4,7 +4,7 @@
     <img :src="this.pic1" class="pic1" />
 
     <div class="wrapper">
-      <img src="@/Assets/logo_login.png" />
+      <img src="../../Assets/logo_login.png" />
       <div class="login_container">
         <input placeholder="Nom Prénom..." v-model="this.login" />
       </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Icon_login from "@/Assets/icons/Icon_login.vue";
+import Icon_login from "../../Assets/icons/Icon_login.vue";
 export default {
   emits: ["cl"],
   components: { Icon_login },
@@ -48,12 +48,12 @@ export default {
     login_pics() {
       switch (window.screen.width) {
         case 1400:
-          this.pic1 = require("@/Assets/login_pic1_small.png");
-          this.pic2 = require("@/Assets/login_pic2_small.png");
+          this.pic1 = require("../../Assets/login_pic1_small.png");
+          this.pic2 = require("../../Assets/login_pic2_small.png");
           break;
         default:
-          this.pic1 = require("@/Assets/logo_login_left.png");
-          this.pic2 = require("@/Assets/logo_login_right.png");
+          this.pic1 = require("../../Assets/logo_login_left.png");
+          this.pic2 = require("../../Assets/logo_login_right.png");
           break;
       }
     },

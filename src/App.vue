@@ -17,7 +17,7 @@
       <span>{{ RankAgent }}</span>
       <Sidebar @cl="switchPage" :currentPageID="currentPageID" />
 
-      <div class="content">
+      <div class="content1">
         <component
           @back="switchPage"
           @ItemID="profile"
@@ -50,8 +50,6 @@
 </template>
 
 <script>
-import Agents from "./components/Pages/Agents/Agents.vue";
-import Cars from "./components/Pages/Cars/Cars.vue";
 import Home from "./components/Pages/Home/Home.vue";
 import Criminal_files from "./components/Pages/Criminal Files/Criminal_files.vue";
 import Criminal_profile from "./components/Pages/Criminal Files/Criminal_profile.vue";
@@ -63,6 +61,8 @@ import Search from "./components/UI/Search.vue";
 import Login from "./components/Player/Login.vue";
 import Stuff from "./components/Pages/Inventory/Stuff.vue";
 import Player_profile from "./components/Player/Player_profile.vue";
+import Agents from "./components/Pages/Agents/Agents.vue";
+import Cars from "./components/Pages/Cars/Cars.vue";
 
 export default {
   emits: [
@@ -76,8 +76,6 @@ export default {
     "deleteCall",
   ],
   components: {
-    Agents,
-    Cars,
     Home,
     Criminal_files,
     Criminal_profile,
@@ -89,6 +87,8 @@ export default {
     Login,
     Stuff,
     Player_profile,
+    Agents,
+    Cars,
   },
   data() {
     return {
@@ -1429,7 +1429,7 @@ export default {
       ],
       Inventory: [
         {
-          img: require("@/Assets/Stick.png"),
+          img: require("./Assets/Stick.png"),
           amount: 10,
         },
       ],
@@ -2036,7 +2036,7 @@ export default {
   height: 100vh;
 }
 
-.content {
+.content1 {
   grid-area: content;
   background-color: #f9faff;
 }

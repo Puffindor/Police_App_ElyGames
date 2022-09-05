@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import Lieutenant_1 from "@/Assets/straps/Lieutenant_1.vue";
-import Lieutenant_2 from "@/Assets/straps/Lieutenant_2.vue";
+import Lieutenant_1 from "../../Assets/straps/Lieutenant_1.vue";
+import Lieutenant_2 from "../../Assets/straps/Lieutenant_2.vue";
 export default {
   emits: ["rank"],
   components: { Lieutenant_1, Lieutenant_2 },
