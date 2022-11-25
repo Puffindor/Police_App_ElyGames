@@ -1,50 +1,48 @@
 <template>
-  <div v-if="active">
-    <Login
-      :PlayerProfile="PlayerProfile"
-      @cl="switchPage"
-      v-if="Login === false"
-    />
-    <div class="app1" v-if="Login === true">
-      <div class="header">
-        <UpperPplate
-          @search="Search"
-          @cl="switchPage"
-          @status="Status"
-          :PlayerProfile="PlayerProfile"
-        />
-      </div>
-      <span>{{ RankAgent }}</span>
-      <Sidebar @cl="switchPage" :currentPageID="currentPageID" />
+  <Login
+    :PlayerProfile="PlayerProfile"
+    @cl="switchPage"
+    v-if="Login === false"
+  />
+  <div class="app1" v-if="Login === true">
+    <div class="header">
+      <UpperPplate
+        @search="Search"
+        @cl="switchPage"
+        @status="Status"
+        :PlayerProfile="PlayerProfile"
+      />
+    </div>
+    <span>{{ RankAgent }}</span>
+    <Sidebar @cl="switchPage" :currentPageID="currentPageID" />
 
-      <div class="content1">
-        <component
-          @back="switchPage"
-          @ItemID="profile"
-          @AgentID="agent_profile"
-          @cl="switchPage"
-          @invited="Invited"
-          @upload="Upload"
-          @upload_player="UploadPlayer"
-          @deleteCall="deleteCall"
-          @rank="ranks"
-          @add_car="AddCar"
-          @agent_rank="AgentRank"
-          :ranks="this.Ranks"
-          :agent_profile="this.AgentsList[index_agent]"
-          :CriminalList="this.CriminalList"
-          :list="this.CriminalList[this.index]"
-          :AgentsList="this.AgentsList"
-          :SearchInput="this.SearchInput1"
-          :SearchResalut="this.SearchResalut"
-          :is="name"
-          :inventory="this.Inventory"
-          :cars="this.Cars"
-          :InventoryHistory="this.InventoryHistory"
-          :PlayerProfile="PlayerProfile"
-          :CitizensCallList="CitizensCallList"
-        ></component>
-      </div>
+    <div class="content1">
+      <component
+        @back="switchPage"
+        @ItemID="profile"
+        @AgentID="agent_profile"
+        @cl="switchPage"
+        @invited="Invited"
+        @upload="Upload"
+        @upload_player="UploadPlayer"
+        @deleteCall="deleteCall"
+        @rank="ranks"
+        @add_car="AddCar"
+        @agent_rank="AgentRank"
+        :ranks="this.Ranks"
+        :agent_profile="this.AgentsList[index_agent]"
+        :CriminalList="this.CriminalList"
+        :list="this.CriminalList[this.index]"
+        :AgentsList="this.AgentsList"
+        :SearchInput="this.SearchInput1"
+        :SearchResalut="this.SearchResalut"
+        :is="name"
+        :inventory="this.Inventory"
+        :cars="this.Cars"
+        :InventoryHistory="this.InventoryHistory"
+        :PlayerProfile="PlayerProfile"
+        :CitizensCallList="CitizensCallList"
+      ></component>
     </div>
   </div>
 </template>
